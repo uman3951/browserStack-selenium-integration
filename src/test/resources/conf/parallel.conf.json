@@ -1,0 +1,30 @@
+{
+  "server": "hub-cloud.browserstack.com",
+  "username": "udaramanupriya_SWZuOh",
+  "access_key": "P5ZhVzDqefc6KgEWLymW",
+
+  "capabilities": {
+    "bstack:options": {
+      "buildName": "browserstack-build-1",
+      "sessionName": "BStack parallel testng",
+      "browserVersion": "latest",
+      "debug": true
+    }
+  },
+
+  "environments": {
+    "env1": {
+      "browserName": "chrome"
+    },
+    "env2": {
+      "browserName": "firefox"
+    },
+    "env3": {
+      "bstack:options": {
+        "osVersion": "Big Sur",
+        "os": "OS X"
+      },
+      "browserName": "safari"
+    }
+  }
+}
