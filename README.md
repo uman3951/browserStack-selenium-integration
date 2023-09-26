@@ -14,5 +14,5 @@
 
 ### Running your tests
 
-- To run tests, run `mvn test -P parallel`
-- To run the test suite, run `mvn test -P suite`
+- To run mobile tests, run `mvn test -P mobile`
+- To run web tests, run `mvn test -P web`
