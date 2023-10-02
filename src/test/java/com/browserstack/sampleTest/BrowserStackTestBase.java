@@ -16,6 +16,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BrowserStackTestBase {
     public RemoteWebDriver webDriver;
+    public RemoteWebDriver androidDriver;
     private static JSONObject config;
     private static JSONObject envs;
     private static Map<String, Object> commonCapabilities;
@@ -90,7 +91,7 @@ public class BrowserStackTestBase {
      * @throws MalformedURLException
      */
     public void connectBrowserStackAndroid() throws MalformedURLException {
-        webDriver = new AndroidDriver(new URL("https://"+username+":"+accessKey+"@"+server+"/wd/hub"),capabilities);
+        androidDriver = new AndroidDriver(new URL("https://"+username+":"+accessKey+"@"+server+"/wd/hub"),capabilities);
     }
 
     public void readConfigFile(String venderName, String technology , String config_file) throws IOException, ParseException {
