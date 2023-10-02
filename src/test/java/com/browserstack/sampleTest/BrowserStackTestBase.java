@@ -40,13 +40,14 @@ public class BrowserStackTestBase {
      * @throws Exception
      */
     public void capabilitySetUp(String config_file, String platform, String environment,String username,String accessKey) throws Exception {
-        venderInfo = platform.split(".");
+        venderInfo = platform.split("\\.");
         venderName = venderInfo[0];
         technology = venderInfo[1];
         readCred(username,accessKey, venderName);
-
-        readConfigFile(config_file, venderName, technology);
         capabilities = new DesiredCapabilities();
+
+        readConfigFile(venderName, technology,config_file);
+
 
         Map<String, Object> envCapabilities = (Map<String, Object>) envs.get(environment);
         Iterator it = envCapabilities.entrySet().iterator();
