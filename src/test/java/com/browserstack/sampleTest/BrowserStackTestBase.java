@@ -121,6 +121,10 @@ public class BrowserStackTestBase {
                 accessKey = password;
             }
         }
+        else {
+            username = user;
+            accessKey = password;
+        }
         server = (String)config.get("server");
     }
 
