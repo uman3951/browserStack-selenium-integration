@@ -6,7 +6,7 @@
     <test name="FirstTest">
         <parameter name="environment" value="Android"/>
         <classes>
-            <class name="com.browserstack.AndroidTest"/>
+            <class name="com.browserstack.sampleTest.AndroidTest"/>
         </classes>
     </test>
 </suite>
