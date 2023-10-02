@@ -25,32 +25,28 @@ public class BrowserStackTestBase {
     private static String server;
     private static String app;
     DesiredCapabilities capabilities;
-    String [] venderAndDetails;
+    String [] venderInfo;
+    String venderName;
+    String technology;
     //public AndroidDriver<AndroidElement> androidDriver;
-
-    public void readConfigFile(String config_file ,String platform) throws Exception {
-        if (platform.equals("BrowserStack.web")) {
-            readWebConfigFile(config_file);
-        } else {
-            readMobileConfigFile(config_file);
-            }
-        }
 
 
     /**
-     * This is to set up capabilities of both web and mobile
-     * @param config_file
-     * @param platform
+     * Thsi is to read the capabilities
+     * @param config_file - Name of the config file
+     * @param platform -> venderName.technology (e.g BrowserStack.web)
      * @param environment
      * @param username
      * @param accessKey
      * @throws Exception
      */
     public void capabilitySetUp(String config_file, String platform, String environment,String username,String accessKey) throws Exception {
-        venderAndDetails = platform.split(".");
-        readCred(username,accessKey,venderAndDetails[0]);
+        venderInfo = platform.split(".");
+        venderName = venderInfo[0];
+        technology = venderInfo[1];
+        readCred(username,accessKey, venderName);
 
-        readConfigFile(config_file,platform);
+        readConfigFile(config_file, venderName, technology);
         capabilities = new DesiredCapabilities();
 
         Map<String, Object> envCapabilities = (Map<String, Object>) envs.get(environment);
@@ -69,7 +65,7 @@ public class BrowserStackTestBase {
             }
 
 
-        if(venderAndDetails[1].contains("web")){
+        if(technology.contains("web")){
             connectWithBrowserStackWeb();
         }
         else {
@@ -99,19 +95,14 @@ public class BrowserStackTestBase {
         androidDriver = new AndroidDriver(new URL("https://"+username+":"+accessKey+"@"+server+"/wd/hub"),capabilities);
     }
 
-    public void readWebConfigFile(String config_file) throws IOException, ParseException {
+    public void readConfigFile(String venderName, String technology , String config_file) throws IOException, ParseException {
+        String configFileName = venderName + "." + technology + "." + config_file;
         JSONParser parser = new JSONParser();
-        config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/" + config_file));
+        config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/" + configFileName));
         commonCapabilities = (JSONObject) config.get("capabilities");
         envs = (JSONObject) config.get("environments");
 
     }
-    public void readMobileConfigFile(String configFile) throws IOException, ParseException {
-        JSONParser parser = new JSONParser();
-        config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/"+configFile));
-        envs = (JSONObject) config.get("environments");
-    }
-
     public void readCred(String user , String password,String vender) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
         config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/"+vender+".cred.conf.json"));
