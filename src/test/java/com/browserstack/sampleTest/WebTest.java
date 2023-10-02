@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class WebTest extends BrowserStackTestBase {
     @BeforeSuite
     public void setUp() throws Exception {
-        webCapabilitySetUp("single.conf.json","web","env1");
+        capabilitySetUp("single.conf.json","web","env1",null,null);
     }
 
     @Test

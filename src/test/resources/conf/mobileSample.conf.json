@@ -11,10 +11,10 @@
     "app": "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c"
   },
 
-  "environments": [
-    {
-      "device": "Google Pixel 3",
-      "os_version": "9.0"
+  "environments": {
+    "env1": {
+  "deviceName": "Google Pixel 3",
+  "os_version": "9.0"
     }
-  ]
+  }
 }
