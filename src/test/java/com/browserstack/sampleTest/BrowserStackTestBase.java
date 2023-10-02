@@ -48,14 +48,7 @@ public class BrowserStackTestBase {
      */
     public void capabilitySetUp(String config_file, String platform, String environment,String username,String accessKey) throws Exception {
         venderAndDetails = platform.split(".");
-
-        if((username == null || accessKey==null)&&venderAndDetails[0].contains("BrowserStack")){
-            readCred(username,accessKey);
-        }
-        else {
-            this.username = username;
-            this.accessKey = accessKey;
-        }
+        readCred(username,accessKey,venderAndDetails[0]);
 
         readConfigFile(config_file,platform);
         capabilities = new DesiredCapabilities();
@@ -75,7 +68,6 @@ public class BrowserStackTestBase {
             capabilities.setCapability(pair.getKey().toString(), pair.getValue());
             }
 
-        readCred(username,accessKey);
 
         if(venderAndDetails[1].contains("web")){
             connectWithBrowserStackWeb();
@@ -120,9 +112,9 @@ public class BrowserStackTestBase {
         envs = (JSONObject) config.get("environments");
     }
 
-    public void readCred(String user , String password) throws IOException, ParseException {
+    public void readCred(String user , String password,String vender) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
-        config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/browserStack.cred.conf.json"));
+        config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/"+vender+".cred.conf.json"));
         if(user == null|| password == null ) {
             username = System.getenv("BROWSERSTACK_USERNAME");
             if (username == null) {
