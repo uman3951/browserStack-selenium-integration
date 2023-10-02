@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="First">
-    <parameter name="config" value="mobileSample.conf.json"/>
-    <parameter name="platform" value="mobile"/>
     <test name="FirstTest">
-        <parameter name="environment" value="Android"/>
         <classes>
             <class name="com.browserstack.sampleTest.AndroidTest"/>
         </classes>
