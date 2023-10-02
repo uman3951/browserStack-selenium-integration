@@ -18,15 +18,15 @@ import java.util.List;
 public class AndroidTest extends BrowserStackTestBase {
     @BeforeSuite
     public void setUp() throws Exception {
-        capabilitySetUp("mobileSample.conf.json","mobile","env1",null, null);
+        capabilitySetUp("mobileSample.conf.json","BrowserStack.mobile","env1",null, null);
     }
 
     @Test
     public void andriodTest() throws Exception {
-      WebElement searchElement = new WebDriverWait(androidDriver, Duration.ofSeconds(30)).until(
+      WebElement searchElement = new WebDriverWait(androidDriver, 30).until(
           ExpectedConditions.elementToBeClickable(MobileBy.AccessibilityId("Search Wikipedia")));
       searchElement.click();
-      WebElement insertTextElement =  new WebDriverWait(androidDriver, Duration.ofSeconds(30)).until(
+      WebElement insertTextElement =  new WebDriverWait(androidDriver, 30).until(
           ExpectedConditions.elementToBeClickable(MobileBy.id("org.wikipedia.alpha:id/search_src_text")));
       insertTextElement.sendKeys("BrowserStack");
       Thread.sleep(5000);

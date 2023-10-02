@@ -25,11 +25,11 @@ public class BrowserStackTestBase {
     private static String server;
     private static String app;
     DesiredCapabilities capabilities;
-    DesiredCapabilities mobileCapabilities;
+    String [] venderAndDetails;
     //public AndroidDriver<AndroidElement> androidDriver;
 
     public void readConfigFile(String config_file ,String platform) throws Exception {
-        if (platform.equals("web")) {
+        if (platform.equals("BrowserStack.web")) {
             readWebConfigFile(config_file);
         } else {
             readMobileConfigFile(config_file);
@@ -47,7 +47,9 @@ public class BrowserStackTestBase {
      * @throws Exception
      */
     public void capabilitySetUp(String config_file, String platform, String environment,String username,String accessKey) throws Exception {
-        if(username == null || accessKey==null){
+        venderAndDetails = platform.split(".");
+
+        if((username == null || accessKey==null)&&venderAndDetails[0].contains("BrowserStack")){
             readCred(username,accessKey);
         }
         else {
@@ -75,7 +77,7 @@ public class BrowserStackTestBase {
 
         readCred(username,accessKey);
 
-        if(platform.equals("web")){
+        if(venderAndDetails[1].contains("web")){
             connectWithBrowserStackWeb();
         }
         else {
