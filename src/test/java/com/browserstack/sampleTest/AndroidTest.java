@@ -18,7 +18,7 @@ import java.util.List;
 public class AndroidTest extends BrowserStackTestBase {
     @BeforeSuite
     public void setUp() throws Exception {
-        capabilitySetUp("mobileSample.conf.json","mobile","env1",null, null);
+        capabilitySetUp("sample.conf.json","BrowserStack.mobile","env1",null, null);
     }
 
     @Test

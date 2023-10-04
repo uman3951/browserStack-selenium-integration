@@ -25,38 +25,29 @@ public class BrowserStackTestBase {
     private static String server;
     private static String app;
     DesiredCapabilities capabilities;
-    DesiredCapabilities mobileCapabilities;
-    //public AndroidDriver<AndroidElement> androidDriver;
-
-    public void readConfigFile(String config_file ,String platform) throws Exception {
-        if (platform.equals("web")) {
-            readWebConfigFile(config_file);
-        } else {
-            readMobileConfigFile(config_file);
-            }
-        }
+    String [] venderInfo;
+    String venderName;
+    String technology;
 
 
     /**
-     * This is to set up capabilities of both web and mobile
-     * @param config_file
-     * @param platform
+     * Thsi is to read the capabilities
+     * @param config_file - Name of the config file
+     * @param platform -> venderName.technology (e.g BrowserStack.web)
      * @param environment
      * @param username
      * @param accessKey
      * @throws Exception
      */
     public void capabilitySetUp(String config_file, String platform, String environment,String username,String accessKey) throws Exception {
-        if(username == null || accessKey==null){
-            readCred(username,accessKey);
-        }
-        else {
-            this.username = username;
-            this.accessKey = accessKey;
-        }
-
-        readConfigFile(config_file,platform);
+        venderInfo = platform.split("\\.");
+        venderName = venderInfo[0];
+        technology = venderInfo[1];
+        readCred(username,accessKey, venderName);
         capabilities = new DesiredCapabilities();
+
+        readConfigFile(venderName, technology,config_file);
+
 
         Map<String, Object> envCapabilities = (Map<String, Object>) envs.get(environment);
         Iterator it = envCapabilities.entrySet().iterator();
@@ -73,9 +64,8 @@ public class BrowserStackTestBase {
             capabilities.setCapability(pair.getKey().toString(), pair.getValue());
             }
 
-        readCred(username,accessKey);
 
-        if(platform.equals("web")){
+        if(technology.contains("web")){
             connectWithBrowserStackWeb();
         }
         else {
@@ -105,22 +95,17 @@ public class BrowserStackTestBase {
         androidDriver = new AndroidDriver(new URL("https://"+username+":"+accessKey+"@"+server+"/wd/hub"),capabilities);
     }
 
-    public void readWebConfigFile(String config_file) throws IOException, ParseException {
+    public void readConfigFile(String venderName, String technology , String config_file) throws IOException, ParseException {
+        String configFileName = venderName + "." + technology + "." + config_file;
         JSONParser parser = new JSONParser();
-        config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/" + config_file));
+        config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/" + configFileName));
         commonCapabilities = (JSONObject) config.get("capabilities");
         envs = (JSONObject) config.get("environments");
 
     }
-    public void readMobileConfigFile(String configFile) throws IOException, ParseException {
+    public void readCred(String user , String password,String vender) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
-        config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/"+configFile));
-        envs = (JSONObject) config.get("environments");
-    }
-
-    public void readCred(String user , String password) throws IOException, ParseException {
-        JSONParser parser = new JSONParser();
-        config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/browserStack.cred.conf.json"));
+        config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/"+vender+".cred.conf.json"));
         if(user == null|| password == null ) {
             username = System.getenv("BROWSERSTACK_USERNAME");
             if (username == null) {
@@ -135,6 +120,10 @@ public class BrowserStackTestBase {
                 username = user;
                 accessKey = password;
             }
+        }
+        else {
+            username = user;
+            accessKey = password;
         }
         server = (String)config.get("server");
     }
