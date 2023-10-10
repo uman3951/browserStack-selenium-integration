@@ -98,14 +98,14 @@ public class BrowserStackTestBase {
     public void readConfigFile(String venderName, String technology , String config_file) throws IOException, ParseException {
         String configFileName = venderName + "." + technology + "." + config_file;
         JSONParser parser = new JSONParser();
-        config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/" + configFileName));
+        config = (JSONObject) parser.parse(new FileReader("src/SeleniumGridTest/resources/conf/" + configFileName));
         commonCapabilities = (JSONObject) config.get("capabilities");
         envs = (JSONObject) config.get("environments");
 
     }
     public void readCred(String user , String password,String vender) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
-        config = (JSONObject) parser.parse(new FileReader("src/test/resources/conf/"+vender+".cred.conf.json"));
+        config = (JSONObject) parser.parse(new FileReader("src/SeleniumGridTest/resources/conf/"+vender+".cred.conf.json"));
         if(user == null|| password == null ) {
             username = System.getenv("BROWSERSTACK_USERNAME");
             if (username == null) {
