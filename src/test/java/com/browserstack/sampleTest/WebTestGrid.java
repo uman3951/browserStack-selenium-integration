@@ -9,6 +9,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
+import java.security.cert.X509Certificate;
+import javax.net.ssl.X509TrustManager;
+import javax.net.ssl.SSLContext;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -23,6 +26,7 @@ public class WebTestGrid extends BrowserStackTestBase {
         capabilities. setBrowserName("safari");
         // capabilities. setPlatform(Platform.XP);
         driver = new RemoteWebDriver(new URL(nodeURL), capabilities);
+
     }
     @BeforeClass
     public void setUp() throws Exception {
