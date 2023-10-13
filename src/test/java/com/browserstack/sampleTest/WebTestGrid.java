@@ -20,10 +20,9 @@ public class WebTestGrid extends BrowserStackTestBase {
     String baseUrl, nodeURL;
     @BeforeSuite
     public void setUpWthrows() throws MalformedURLException {
-        baseUrl = "http://newtours.demoaut.com/";
-        nodeURL = "http://192.168.1.6:4444/wd/hub";
+        nodeURL = "http://192.168.1.100:4444/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities. setBrowserName("safari");
+        capabilities.setBrowserName("chrome");
         // capabilities. setPlatform(Platform.XP);
         driver = new RemoteWebDriver(new URL(nodeURL), capabilities);
 
