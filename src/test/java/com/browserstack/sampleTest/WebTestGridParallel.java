@@ -9,13 +9,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-import java.security.cert.X509Certificate;
-import javax.net.ssl.X509TrustManager;
-import javax.net.ssl.SSLContext;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class WebTestGrid extends BrowserStackTestBase {
+public class WebTestGridParallel extends BrowserStackTestBase {
     WebDriver driver;
     String baseUrl, nodeURL;
     @BeforeSuite
