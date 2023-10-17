@@ -15,7 +15,7 @@
         <parameter name="browser-version" value="latest" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
     <test name="Test chrome on linux">
@@ -25,7 +25,7 @@
         <parameter name="browser-version" value="latest" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
     <test name="Test chrome on windows 8.1">
@@ -35,7 +35,7 @@
         <parameter name="browser-version" value="latest" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
     <test name="Test chrome on windows 8">
@@ -45,7 +45,7 @@
         <parameter name="browser-version" value="latest" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
     <test name="Test chrome on windows 7">
@@ -55,7 +55,7 @@
         <parameter name="browser-version" value="latest" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
 
@@ -70,7 +70,7 @@
         <parameter name="browser-version" value="latest" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
     <test name="Test firefox on linux">
@@ -80,7 +80,7 @@
         <parameter name="browser-version" value="latest" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
     <test name="Test firefox on windows 8.1">
@@ -90,7 +90,7 @@
         <parameter name="browser-version" value="84" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
     <test name="Test firefox on windows 8">
@@ -100,7 +100,7 @@
         <parameter name="browser-version" value="84" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
     <test name="Test firefox on windows 7">
@@ -110,7 +110,7 @@
         <parameter name="browser-version" value="84" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
 
@@ -124,7 +124,7 @@
         <parameter name="browser-version" value="11" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
     <test name="Test internet explorer on windows 8.1">
@@ -134,7 +134,7 @@
         <parameter name="browser-version" value="11" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
     <test name="Test internet explorer on windows 8">
@@ -144,7 +144,7 @@
         <parameter name="browser-version" value="10" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
     <test name="Test internet explorer on windows 7">
@@ -154,7 +154,7 @@
         <parameter name="browser-version" value="11" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
 
@@ -168,7 +168,7 @@
         <parameter name="browser-version" value="latest" />
         <parameter name="record-video" value="True" />
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestGrid" />
+            <class name="com.browserstack.sampleTest.WebTestGridViaNode" />
         </classes>
     </test>
 

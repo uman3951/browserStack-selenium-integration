@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class WebTestGridParallel extends BrowserStackTestBase {
+public class WebTestGridViaNode extends BrowserStackTestBase {
     WebDriver driver;
     String baseUrl, nodeURL;
     @BeforeSuite
