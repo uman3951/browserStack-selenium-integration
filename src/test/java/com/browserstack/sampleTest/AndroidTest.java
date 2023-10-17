@@ -1,6 +1,6 @@
 package com.browserstack.sampleTest;
 
-import io.appium.java_client.MobileBy;
+import io.appium.java_client.AppiumBy;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -24,10 +24,10 @@ public class AndroidTest extends BrowserStackTestBase {
     @Test
     public void andriodTest() throws Exception {
       WebElement searchElement = new WebDriverWait(androidDriver, Duration.ofSeconds(30)).until(
-          ExpectedConditions.elementToBeClickable(MobileBy.AccessibilityId("Search Wikipedia")));
+          ExpectedConditions.elementToBeClickable(AppiumBy.accessibilityId("Search Wikipedia")));
       searchElement.click();
       WebElement insertTextElement =  new WebDriverWait(androidDriver, Duration.ofSeconds(30)).until(
-          ExpectedConditions.elementToBeClickable(MobileBy.id("org.wikipedia.alpha:id/search_src_text")));
+          ExpectedConditions.elementToBeClickable(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")));
       insertTextElement.sendKeys("BrowserStack");
       Thread.sleep(5000);
 

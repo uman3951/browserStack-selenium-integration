@@ -1,7 +1,6 @@
 package com.browserstack.sampleTest;
 
 import io.appium.java_client.AppiumBy;
-import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.MutableCapabilities;
@@ -28,23 +27,20 @@ import java.util.Map;
 public class AndroidTestGrid {
     @Test
     public void connectToBrowserStack() throws MalformedURLException, InterruptedException {
-        MutableCapabilities capabilities = new MutableCapabilities();
-        capabilities.setCapability("platformName","android");
-        capabilities.setCapability("platformVersion", "12");
-        capabilities.setCapability("deviceName", "Google Pixel 6 Pro");
-        capabilities.setCapability("realMobile", "true");
-        capabilities.setCapability("app","bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
-        RemoteWebDriver androidDriver = new AndroidDriver(new URL("http://192.168.1.100:4444"), capabilities);
-        WebElement searchElement = new WebDriverWait(androidDriver, Duration.ofSeconds(30)).until(
-                ExpectedConditions.elementToBeClickable(AppiumBy.accessibilityId("Search Wikipedia")));
-        searchElement.click();
-        WebElement insertTextElement =  new WebDriverWait(androidDriver, Duration.ofSeconds(30)).until(
-                ExpectedConditions.elementToBeClickable(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")));
-        insertTextElement.sendKeys("BrowserStack");
-        Thread.sleep(5000);
-
-        List<WebElement> allProductsName = androidDriver.findElements(By.className("android.widget.TextView"));
-        Assert.assertTrue(allProductsName.size() > 0);
-        androidDriver.quit();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setBrowserName("chrome");
+        capabilities.setCapability("platformName", "Android");
+        Map<String, Object> sauceOptions = new HashMap<>();
+        sauceOptions.put("deviceName", "Google Pixel 6 Pro GoogleAPI Emulator");
+        sauceOptions.put("platformName","Android");
+        sauceOptions.put("build", "1234");
+        sauceOptions.put("name", "Testing Integration");
+        sauceOptions.put("username", "udaramanupriya_SWZuOh");
+        sauceOptions.put("accessKey", "06a67e1c-ec8e-4f05-a6c8-5c6e816b079d");
+        capabilities.setCapability("sauce:options", sauceOptions);
+        RemoteWebDriver driver = new RemoteWebDriver(new URL("https://ondemand.eu-central-1.saucelabs.com:443/wd/hub"), capabilities);
+        driver.get("https://www.google.com");
+        Assert.assertEquals(driver.getTitle(), "Google");
+        driver.quit();
     }
 }
