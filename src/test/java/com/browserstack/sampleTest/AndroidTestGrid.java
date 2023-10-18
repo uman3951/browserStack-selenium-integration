@@ -1,20 +1,14 @@
 package com.browserstack.sampleTest;
 
-import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.MutableCapabilities;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
+
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
@@ -26,21 +20,31 @@ import java.util.Map;
 
 public class AndroidTestGrid {
     @Test
-    public void connectToBrowserStack() throws MalformedURLException, InterruptedException {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setBrowserName("chrome");
-        capabilities.setCapability("platformName", "Android");
-        Map<String, Object> sauceOptions = new HashMap<>();
-        sauceOptions.put("deviceName", "Google Pixel 6 Pro GoogleAPI Emulator");
-        sauceOptions.put("platformName","Android");
-        sauceOptions.put("build", "1234");
-        sauceOptions.put("name", "Testing Integration");
-        sauceOptions.put("username", "udaramanupriya_SWZuOh");
-        sauceOptions.put("accessKey", "06a67e1c-ec8e-4f05-a6c8-5c6e816b079d");
-        capabilities.setCapability("sauce:options", sauceOptions);
-        RemoteWebDriver driver = new RemoteWebDriver(new URL("https://ondemand.eu-central-1.saucelabs.com:443/wd/hub"), capabilities);
-        driver.get("https://www.google.com");
-        Assert.assertEquals(driver.getTitle(), "Google");
+    public void connectToBrowserStack() throws MalformedURLException {
+        /*DesiredCapabilities capabilities = new DesiredCapabilities();
+        HashMap<String, Object> bsOptions = new HashMap<String, Object>();
+        bsOptions.put("build", "Test Android");
+        bsOptions.put("name", "Testing Integration");
+        capabilities.setCapability("platformName", "android");
+        capabilities.setCapability("deviceName", "Samsung Galaxy S.*");
+        capabilities.setCapability("platformVersion", "1[012]");
+        capabilities.setCapability("bstack:options", bsOptions);
+         */
+        MutableCapabilities capabilities = new MutableCapabilities();
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put("osVersion", "14.0");
+        browserstackOptions.put("deviceName", "Google Pixel 6 Pro");
+        browserstackOptions.put("local", "false");
+        capabilities.setCapability("bstack:options", browserstackOptions);
+
+        AppiumDriver driver = new AndroidDriver(new URL("http://10.140.38.206:4444"), capabilities);
+        driver.get("https://www.saucedemo.com");
+        driver.findElement(By.id("user-name")).sendKeys("standard_user");
+        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("login-button")).click();
+        Assert.assertEquals(driver.getTitle(),"Swag Labs");
         driver.quit();
     }
+
+
 }

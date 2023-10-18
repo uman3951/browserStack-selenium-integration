@@ -39,7 +39,7 @@ public class MobileTest {
         capabilities.setCapability("sauce:options", sauceOptions);
 
 
-        AppiumDriver driver = new AndroidDriver(new URL("http://192.168.1.100:4444"), capabilities);
+        AppiumDriver driver = new AndroidDriver(new URL("http://10.140.38.206:4444"), capabilities);
 
         driver.get("https://www.google.com/");
         Assert.assertEquals(driver.getTitle(), "Google");
