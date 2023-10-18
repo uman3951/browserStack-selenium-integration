@@ -1,5 +1,6 @@
 package com.browserstack.sampleTest;
 
+import com.common.Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -18,9 +19,10 @@ public class WebTestGrid {
         browserOptions.setPlatformName("WINDOWS 11");
         browserOptions.setBrowserVersion("104");
         Map<String, Object> bsOptions = new HashMap<>();
-        bsOptions.put("buildName", "Test");
+        bsOptions.put(Constants.WEB_BUILD_NAME, "Test");
         browserOptions.setCapability("bstack:options", bsOptions);
-        RemoteWebDriver driver = new RemoteWebDriver(new URL("http://192.168.1.100:4444"), browserOptions);
+        RemoteWebDriver driver = new RemoteWebDriver(new URL("http://10.140.38.206:4444"), browserOptions);
+
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");

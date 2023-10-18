@@ -11,6 +11,12 @@
 * Clone the repo
 * Install dependencies `mvn compile`
 * Update `*.conf.json` files inside the `src/test/resources/conf` directory with your [BrowserStack Username and Access Key](https://www.browserstack.com/accounts/settings)
+* Copy the .toml file s to the folder where your selenium grid jar is available in the local machine
+
+### Commands to up the Selenium hub and nodes
+* navigate to the folder where selenium grid jar is available 
+* java -jar <selenium-grid-name>.jar hub
+* java -jar  <selenium-grid-name>.jar node --config <tomal_file_name>.toml
 
 ### Running your tests
 

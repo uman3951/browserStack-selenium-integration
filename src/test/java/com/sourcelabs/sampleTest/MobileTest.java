@@ -1,5 +1,6 @@
 package com.sourcelabs.sampleTest;
 
+import com.common.Constants;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
@@ -26,18 +27,14 @@ public class MobileTest {
     public void connectToSourceLabs() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         HashMap<String, Object> sauceOptions = new HashMap<String, Object>();
-        sauceOptions.put("username", "umanupriya");
-        sauceOptions.put("accessKey", "365683d7-c41b-4750-b14e-64477c84fc39");
-        sauceOptions.put("build", "Test Android");
-        sauceOptions.put("name", "Testing Integration");
-
-        capabilities.setCapability("appium:deviceName", "Google Pixel 6 Pro GoogleAPI Emulator");
-        capabilities.setCapability("appium:platformVersion", "12.0");
-        capabilities.setCapability("browserName", "chrome");
-        capabilities.setCapability("platformName", "ANDROID");
-
+        sauceOptions.put(Constants.SOURCE_LABS_USER_NAME, "umanupriya");
+        sauceOptions.put(Constants.SOURCE_LABS_ACCESS_KEY, "365683d7-c41b-4750-b14e-64477c84fc39");
+        sauceOptions.put(Constants.BUILD_NAME, "Test Android");
+        sauceOptions.put(Constants.TEST_NAME, "Testing Integration");
+        sauceOptions.put(Constants.MOBILE_OS_VERSION, "12.0");
+        sauceOptions.put(Constants.MOBILE_DEVICE_NAME, "Google Pixel 6 Pro GoogleAPI Emulator");
+        sauceOptions.put("local", "false");
         capabilities.setCapability("sauce:options", sauceOptions);
-
 
         AppiumDriver driver = new AndroidDriver(new URL("http://10.140.38.206:4444"), capabilities);
 
