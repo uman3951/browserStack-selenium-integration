@@ -22,9 +22,9 @@ public class MobileTest {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         HashMap<String, Object> ltOptions = new HashMap<String, Object>();
         ltOptions.put("w3c", true);
-        ltOptions.put("platformName", "android");
-        ltOptions.put("deviceName", "Pixel 6 Pro");
-        ltOptions.put("platformVersion", "13");
+        ltOptions.put(Constants.MOBILE_PLATFORM_NAME, "android");
+        ltOptions.put(Constants.MOBILE_DEVICE_NAME, "Pixel 6 Pro");
+        ltOptions.put(Constants.MOBILE_PLATFORM_VERSION, "13");
         capabilities.setCapability("lt:options", ltOptions);
 
         driver = new AndroidDriver(new URL("https://udara.manupriya:Ejvwi0FShhVeYpQW2fUwemw88y2DzBbiwFCWdQqYXck9T8WUcM@hub.lambdatest.com/wd/hub"), capabilities);

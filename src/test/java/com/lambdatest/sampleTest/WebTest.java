@@ -21,8 +21,6 @@ public class WebTest {
         browserOptions.setPlatformName("Windows 11");
         browserOptions.setBrowserVersion("104.0");
         HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-        ltOptions.put("selenium_version", "4.0.0");
-        ltOptions.put("w3c", true);
         browserOptions.setCapability("LT:Options", ltOptions);
         driver = new RemoteWebDriver(new URL("https://udara.manupriya:Ejvwi0FShhVeYpQW2fUwemw88y2DzBbiwFCWdQqYXck9T8WUcM@hub.lambdatest.com/wd/hub"), browserOptions);
     }

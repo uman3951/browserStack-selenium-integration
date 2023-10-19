@@ -11,6 +11,10 @@ public class Constants {
     public static String SOURCE_LABS_USER_NAME = "username";
     public static String SOURCE_LABS_ACCESS_KEY = "accessKey";
 
+    //LamndaTest Configurations
+    public static String MOBILE_PLATFORM_VERSION = "platformVersion";
+    public static String MOBILE_PLATFORM_NAME = "platformName";
+
 
 
 }
