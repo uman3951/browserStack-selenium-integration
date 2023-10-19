@@ -6,14 +6,17 @@ import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class AndroidTestGrid {
-    @Test
+public class MobileTest {
+    AppiumDriver driver;
+    @BeforeClass
     public void connectToBrowserStack() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
@@ -22,15 +25,22 @@ public class AndroidTestGrid {
         browserstackOptions.put("local", "false");
         capabilities.setCapability("bstack:options", browserstackOptions);
 
-        AppiumDriver driver = new AndroidDriver(new URL("http://10.140.38.206:4444"), capabilities);
+        driver = new AndroidDriver(new URL("http://192.168.1.4:4444"), capabilities);
+
+    }
+
+    @Test
+    public void TestSourceDemoGooglePixelPro(){
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
         Assert.assertEquals(driver.getTitle(), "Swag Labs");
-        driver.quit();
-
     }
 
+    @AfterClass
+    public void close(){
+        driver.quit();
+    }
 
 }
