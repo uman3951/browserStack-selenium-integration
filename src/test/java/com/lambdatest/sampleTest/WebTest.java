@@ -18,11 +18,17 @@ public class WebTest {
     @Test
     public void connectToLambdaTest() throws MalformedURLException {
         ChromeOptions browserOptions = new ChromeOptions();
-        browserOptions.setPlatformName("Windows 11");
-        browserOptions.setBrowserVersion("104.0");
+       // browserOptions.setPlatformName("Windows 11");
+       // browserOptions.setBrowserVersion("104.0");
         HashMap<String, Object> ltOptions = new HashMap<String, Object>();
+        ltOptions.put(Constants.BUILD_NAME, "Test Lambda");
+        ltOptions.put(Constants.PROJECT_NAME, "Test Lambda");
+        ltOptions.put(Constants.BROWSER_NAME,"chrome");
+        ltOptions.put(Constants.BROWSER_VERSION,"104");
+        ltOptions.put(Constants.PLATFORM_NAME,"Windows 11");
         browserOptions.setCapability("LT:Options", ltOptions);
-        driver = new RemoteWebDriver(new URL("https://udara.manupriya:Ejvwi0FShhVeYpQW2fUwemw88y2DzBbiwFCWdQqYXck9T8WUcM@hub.lambdatest.com/wd/hub"), browserOptions);
+       //driver = new RemoteWebDriver(new URL("https://udara.manupriya:Ejvwi0FShhVeYpQW2fUwemw88y2DzBbiwFCWdQqYXck9T8WUcM@hub.lambdatest.com/wd/hub"), browserOptions);
+        driver = new RemoteWebDriver(new URL("http://192.168.1.9:4444"), browserOptions);
     }
     @Test
     public void testSourceDemo(){

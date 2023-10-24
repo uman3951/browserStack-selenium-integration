@@ -13,7 +13,11 @@ public class Constants {
 
     //LamndaTest Configurations
     public static String MOBILE_PLATFORM_VERSION = "platformVersion";
-    public static String MOBILE_PLATFORM_NAME = "platformName";
+    public static String PLATFORM_NAME = "platformName";
+    public static String PROJECT_NAME = "project";
+    public static String BROWSER_NAME = "browserName";
+    public static String BROWSER_VERSION = "browserVersion";
+
 
 
 

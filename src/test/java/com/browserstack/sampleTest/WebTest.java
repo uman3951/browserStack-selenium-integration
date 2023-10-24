@@ -24,7 +24,7 @@ public class WebTest {
         Map<String, Object> bsOptions = new HashMap<>();
         bsOptions.put(Constants.WEB_BUILD_NAME, "Test");
         browserOptions.setCapability("bstack:options", bsOptions);
-        driver = new RemoteWebDriver(new URL("http://192.168.1.4:4444"), browserOptions);
+        driver = new RemoteWebDriver(new URL("http://192.168.1.9:4444"), browserOptions);
     }
     @Test
     public void testSourceDemo(){

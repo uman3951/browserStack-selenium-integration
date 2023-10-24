@@ -5,7 +5,6 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -21,13 +20,15 @@ public class MobileTest {
     public void connectToLambdaTest() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         HashMap<String, Object> ltOptions = new HashMap<String, Object>();
+        ltOptions.put(Constants.BUILD_NAME, "Test Mobile Lambda");
+        ltOptions.put(Constants.PROJECT_NAME, "Test Mobile Lambda");
         ltOptions.put("w3c", true);
-        ltOptions.put(Constants.MOBILE_PLATFORM_NAME, "android");
+        ltOptions.put(Constants.PLATFORM_NAME, "android");
         ltOptions.put(Constants.MOBILE_DEVICE_NAME, "Pixel 6 Pro");
         ltOptions.put(Constants.MOBILE_PLATFORM_VERSION, "13");
         capabilities.setCapability("lt:options", ltOptions);
 
-        driver = new AndroidDriver(new URL("https://udara.manupriya:Ejvwi0FShhVeYpQW2fUwemw88y2DzBbiwFCWdQqYXck9T8WUcM@hub.lambdatest.com/wd/hub"), capabilities);
+        driver = new AndroidDriver(new URL("http://192.168.1.9:4444"), capabilities);
 
     }
 
