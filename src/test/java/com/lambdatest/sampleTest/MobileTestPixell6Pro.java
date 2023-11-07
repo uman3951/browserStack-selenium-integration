@@ -14,7 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class MobileTest {
+public class MobileTestPixell6Pro {
     AppiumDriver driver;
     @BeforeClass
     public void connectToLambdaTest() throws MalformedURLException {
@@ -38,7 +38,7 @@ public class MobileTest {
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
-        Assert.assertEquals(driver.getTitle(), "Swag Labs");
+        Assert.assertEquals(driver.getTitle(), "Test");
     }
 
     @AfterClass

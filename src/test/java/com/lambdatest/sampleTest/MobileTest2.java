@@ -1,4 +1,4 @@
-package com.browserstack.sampleTest;
+package com.lambdatest.sampleTest;
 
 import com.common.Constants;
 import io.appium.java_client.AppiumDriver;
@@ -14,20 +14,21 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class MobileTest {
+public class MobileTest2 {
     AppiumDriver driver;
     @BeforeClass
-    public void connectToBrowserStack() throws MalformedURLException {
+    public void connectToLambdaTest() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
-        browserstackOptions.put("buildName","Test Google Pixel");
-        browserstackOptions.put(Constants.MOBILE_OS_VERSION, "12.0");
-        browserstackOptions.put(Constants.MOBILE_DEVICE_NAME, "Google Pixel 6 Pro");
-        browserstackOptions.put("local", "false");
-        browserstackOptions.put("networkname:applicationName","bs");
-        capabilities.setCapability("bstack:options", browserstackOptions);
+        HashMap<String, Object> ltOptions = new HashMap<String, Object>();
+        ltOptions.put(Constants.BUILD_NAME, "Test Mobile Lambda2");
+        ltOptions.put(Constants.PROJECT_NAME, "Test Mobile Lambda2");
+        ltOptions.put("w3c", true);
+        ltOptions.put(Constants.PLATFORM_NAME, "android");
+        ltOptions.put(Constants.MOBILE_DEVICE_NAME, "Pixel 6 Pro");
+        ltOptions.put(Constants.MOBILE_PLATFORM_VERSION, "13");
+        capabilities.setCapability("lt:options", ltOptions);
 
-        driver = new AndroidDriver(new URL("http://192.168.1.9:4444"), capabilities);
+        driver = new AndroidDriver(new URL("https://udara.manupriya:Ejvwi0FShhVeYpQW2fUwemw88y2DzBbiwFCWdQqYXck9T8WUcM@hub.lambdatest.com/wd/hub"), capabilities);
 
     }
 

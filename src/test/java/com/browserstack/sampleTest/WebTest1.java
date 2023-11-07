@@ -1,4 +1,4 @@
-package com.lambdatest.sampleTest;
+package com.browserstack.sampleTest;
 
 import com.common.Constants;
 import org.openqa.selenium.By;
@@ -14,31 +14,27 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WebTest {
+public class WebTest1 {
     RemoteWebDriver driver;
     @BeforeClass
-    public void connectToLambdaTest() throws MalformedURLException {
+    public void connectToBrowserStack() throws MalformedURLException {
         ChromeOptions browserOptions = new ChromeOptions();
-        HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-        ltOptions.put(Constants.BUILD_NAME, "Test Lambda");
-        ltOptions.put(Constants.PROJECT_NAME, "Test Lambda");
-        ltOptions.put(Constants.BROWSER_NAME,"chrome");
-        ltOptions.put(Constants.BROWSER_VERSION,"116");
-        ltOptions.put(Constants.PLATFORM_NAME,"Windows 11");
-        ltOptions.put("networkname:applicationName","lambda");
-        browserOptions.setCapability("LT:Options", ltOptions);
-        //browserOptions.setCapability("bstack:Options", ltOptions);
-        driver = new RemoteWebDriver(new URL("http://10.140.36.205:4444"), browserOptions);
+        browserOptions.setPlatformName("WINDOWS 11");
+        browserOptions.setBrowserVersion("104");
+        Map<String, Object> bsOptions = new HashMap<>();
+        bsOptions.put(Constants.WEB_BUILD_NAME, "Test");
+        browserOptions.setCapability("bstack:options", bsOptions);
+        driver = new RemoteWebDriver(new URL("http://192.168.1.9:4444"), browserOptions);
     }
     @Test
-    public void testSourceDemoViaLambda(){
+    public void testSourceDemo(){
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
         Assert.assertEquals(driver.getTitle(),"Swag Labs");
+        driver.quit();
     }
-
     @AfterClass
     public void close(){
         driver.quit();
