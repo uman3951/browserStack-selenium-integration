@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="First" parallel="classes" thread-count="4">
+<suite name="First" parallel="classes" thread-count="18">
     <test name="sourceDemo1">
         <classes>
-            <class name="com.browserstack.sampleTest.WebTest4"/>
-            <class name="com.sourcelabs.sampleTest.WebTest4"/>
-            <class name="com.lambdatest.sampleTest.WebTest4"/>
+            <class name="com.browserstack.sampleTest.WebTestIntegration1"/>
+            <class name="com.browserstack.sampleTest.WebTestIntegration2"/>
+            <class name="com.browserstack.sampleTest.WebTestIntegration3"/>
+            <class name="com.browserstack.sampleTest.WebTestIntegration4"/>
+            <class name="com.browserstack.sampleTest.WebTestIntegration5"/>
+            <class name="com.browserstack.sampleTest.WebTestIntegration6"/>
+            <class name="com.sourcelabs.sampleTest.WebTestIntegration1"/>
+            <class name="com.sourcelabs.sampleTest.WebTestIntegration2"/>
+            <class name="com.sourcelabs.sampleTest.WebTestIntegration3"/>
+            <class name="com.sourcelabs.sampleTest.WebTestIntegration4"/>
+            <class name="com.sourcelabs.sampleTest.WebTestIntegration5"/>
+            <class name="com.sourcelabs.sampleTest.WebTestIntegration6"/>
+            <class name="com.lambdatest.sampleTest.WebTestIntegration1"/>
+            <class name="com.lambdatest.sampleTest.WebTestIntegration2"/>
+            <class name="com.lambdatest.sampleTest.WebTestIntegration3"/>
+            <class name="com.lambdatest.sampleTest.WebTestIntegration4"/>
+            <class name="com.lambdatest.sampleTest.WebTestIntegration5"/>
+            <class name="com.lambdatest.sampleTest.WebTestIntegration6"/>
         </classes>
     </test>
 </suite>

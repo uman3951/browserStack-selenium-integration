@@ -2,7 +2,7 @@ package com.browserstack.sampleTest;
 
 import com.common.Constants;
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -14,20 +14,24 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WebTest1 {
+public class WebTestIntegration1 {
     RemoteWebDriver driver;
     @BeforeClass
     public void connectToBrowserStack() throws MalformedURLException {
-        ChromeOptions browserOptions = new ChromeOptions();
-        browserOptions.setPlatformName("WINDOWS 11");
-        browserOptions.setBrowserVersion("104");
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("networkname:applicationName","bs");
+        capabilities.setCapability("browserName","chrome");
+        capabilities.setCapability("platformName","Windows 11");
+        capabilities.setCapability("browserVersion","116");
         Map<String, Object> bsOptions = new HashMap<>();
-        bsOptions.put(Constants.WEB_BUILD_NAME, "Test");
-        browserOptions.setCapability("bstack:options", bsOptions);
-        driver = new RemoteWebDriver(new URL("http://192.168.1.9:4444"), browserOptions);
+        bsOptions.put(Constants.WEB_BUILD_NAME, "Test BS Integration 1");
+
+        capabilities.setCapability("bstack:options", bsOptions);
+        driver = new RemoteWebDriver(new URL("http://192.168.1.6:4444"), capabilities);
+
     }
     @Test
-    public void testSourceDemo(){
+    public void testSourceDemoViaBS(){
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");

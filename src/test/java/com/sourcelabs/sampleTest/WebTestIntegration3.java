@@ -2,7 +2,7 @@ package com.sourcelabs.sampleTest;
 
 import com.common.Constants;
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -14,23 +14,24 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WebTest1 {
+public class WebTestIntegration3 {
     RemoteWebDriver driver;
     @BeforeClass
     public void connectToSourceLabs() throws MalformedURLException {
-       // SafariOptions browserOptions = new SafariOptions();
-        // browserOptions.setPlatformName("macOS 12");
-        //browserOptions.setBrowserVersion("15");
-        ChromeOptions browserOptions = new ChromeOptions();
-        browserOptions.setPlatformName("Windows 11");
-        browserOptions.setBrowserVersion("114");
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("networkname:applicationName","sourceLabs");
+        capabilities.setCapability("browserName","chrome");
+        capabilities.setCapability("platformName","Windows 11");
+        capabilities.setCapability("browserVersion","116");
+
         Map<String, Object> sauceOptions = new HashMap<>();
-        sauceOptions.put(Constants.BUILD_NAME, "Test-Web 1");
-        sauceOptions.put(Constants.TEST_NAME, "Test-Web 1");
+        sauceOptions.put(Constants.BUILD_NAME, "Test Source Integration 3");
+        sauceOptions.put(Constants.TEST_NAME, "Test Source Integration 3");
         sauceOptions.put(Constants.SOURCE_LABS_USER_NAME, "oauth-udara.manupriya-054b4");
         sauceOptions.put(Constants.SOURCE_LABS_ACCESS_KEY, "2fba17e7-bfbd-4027-8c21-bef0f924dda0");
-        browserOptions.setCapability("sauce:options", sauceOptions);
-        driver = new RemoteWebDriver(new URL("http://192.168.1.9:4444"), browserOptions);
+        capabilities.setCapability("sauce:options", sauceOptions);
+        driver = new RemoteWebDriver(new URL("http://192.168.1.6:4444"), capabilities);
     }
     @Test
     public void testSourceDemoViaSourceLabs(){

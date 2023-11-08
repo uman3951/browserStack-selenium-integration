@@ -2,33 +2,35 @@ package com.lambdatest.sampleTest;
 
 import com.common.Constants;
 import org.openqa.selenium.By;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.safari.SafariOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class WebTestMacOsSafari {
+public class WebTestIntegration3 {
     RemoteWebDriver driver;
-    @Test
+    @BeforeClass
     public void connectToLambdaTest() throws MalformedURLException {
-        //ChromeOptions browserOptions = new ChromeOptions();
-        SafariOptions browserOptions = new SafariOptions();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("networkname:applicationName","lambda");
+        capabilities.setCapability("browserName","chrome");
+        capabilities.setCapability("platformName","Windows 11");
+        capabilities.setCapability("browserVersion","116");
         HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-        ltOptions.put(Constants.BUILD_NAME, "Test Lambda 3");
-        ltOptions.put(Constants.PROJECT_NAME, "Test Lambda 3");
-        ltOptions.put(Constants.BROWSER_NAME,"safari");
-        ltOptions.put(Constants.BROWSER_VERSION,"15");
-        ltOptions.put(Constants.PLATFORM_NAME,"macOS 12");
-        browserOptions.setCapability("LT:Options", ltOptions);
-        driver = new RemoteWebDriver(new URL("http://192.168.1.9:4444"), browserOptions);
+        ltOptions.put(Constants.BUILD_NAME, "Test Lambda Integration 3");
+        ltOptions.put(Constants.PROJECT_NAME, "Test Lambda Integration 3");
+
+        capabilities.setCapability("LT:Options", ltOptions);
+        driver = new RemoteWebDriver(new URL("http://192.168.1.6:4444"), capabilities);
     }
     @Test
-    public void testSourceDemo(){
+    public void testSourceDemoViaLambda(){
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");

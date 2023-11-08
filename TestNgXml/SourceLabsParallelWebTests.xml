@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="First" parallel="classes" thread-count="6">
+    <test name="sourceDemo1">
+        <classes>
+            <class name="com.sourcelabs.sampleTest.WebTestIntegration1"/>
+            <class name="com.sourcelabs.sampleTest.WebTestIntegration2"/>
+            <class name="com.sourcelabs.sampleTest.WebTestIntegration3"/>
+            <class name="com.sourcelabs.sampleTest.WebTestIntegration4"/>
+            <class name="com.sourcelabs.sampleTest.WebTestIntegration5"/>
+            <class name="com.sourcelabs.sampleTest.WebTestIntegration6"/>
+        </classes>
+    </test>
+</suite>

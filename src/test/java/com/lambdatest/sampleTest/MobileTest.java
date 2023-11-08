@@ -14,7 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class MobileTestPixell6Pro {
+public class MobileTest {
     AppiumDriver driver;
     @BeforeClass
     public void connectToLambdaTest() throws MalformedURLException {
