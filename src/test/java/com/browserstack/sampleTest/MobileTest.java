@@ -19,20 +19,22 @@ public class MobileTest {
     @BeforeClass
     public void connectToBrowserStack() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("networkname:applicationName","bs");
+        capabilities.setCapability("platformName", "android");
         HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
         browserstackOptions.put("buildName","Test Google Pixel");
         browserstackOptions.put(Constants.MOBILE_OS_VERSION, "12.0");
         browserstackOptions.put(Constants.MOBILE_DEVICE_NAME, "Google Pixel 6 Pro");
         browserstackOptions.put("local", "false");
-        browserstackOptions.put("networkname:applicationName","bs");
+       // browserstackOptions.put("networkname:applicationName","bs");
         capabilities.setCapability("bstack:options", browserstackOptions);
 
-        driver = new AndroidDriver(new URL("http://192.168.1.9:4444"), capabilities);
+        driver = new AndroidDriver(new URL("http://192.168.1.6:4444"), capabilities);
 
     }
 
     @Test
-    public void TestSourceDemoGooglePixelPro(){
+    public void testGooglePixelViaBS(){
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");

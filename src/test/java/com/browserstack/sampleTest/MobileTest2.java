@@ -19,24 +19,26 @@ public class MobileTest2 {
     @BeforeClass
     public void connectToBrowserStack() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("networkname:applicationName","bs");
+        capabilities.setCapability("platformName", "android");
         HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
-        browserstackOptions.put("buildName","Test Mobile");
-        browserstackOptions.put(Constants.MOBILE_OS_VERSION, "12.0");
-        browserstackOptions.put(Constants.MOBILE_DEVICE_NAME, "Google Pixel 7 Pro");
+        browserstackOptions.put("buildName","Test Samsung Galaxy");
+        browserstackOptions.put(Constants.MOBILE_OS_VERSION, "10.0");
+        browserstackOptions.put(Constants.MOBILE_DEVICE_NAME, "Samsung Galaxy S20");
         browserstackOptions.put("local", "false");
         capabilities.setCapability("bstack:options", browserstackOptions);
 
-        driver = new AndroidDriver(new URL("http://192.168.1.9:4444"), capabilities);
+        driver = new AndroidDriver(new URL("http://192.168.1.6:4444"), capabilities);
 
     }
 
     @Test
-    public void TestSourceDemoGooglePixelPro(){
+    public void TestSamsungGalaxyViaBS(){
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
-        Assert.assertEquals(driver.getTitle(), "Test");
+        Assert.assertEquals(driver.getTitle(), "Swag Labs");
     }
 
     @AfterClass

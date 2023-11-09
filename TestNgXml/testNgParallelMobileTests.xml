@@ -4,7 +4,6 @@
     <test name="sourceDemo1">
         <classes>
             <class name="com.browserstack.sampleTest.MobileTest"/>
-            <class name="com.browserstack.sampleTest.MobileTest1"/>
             <class name="com.browserstack.sampleTest.MobileTest2"/>
         </classes>
     </test>

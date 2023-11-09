@@ -28,7 +28,7 @@ public class MobileTestIOS {
         ltOptions.put(Constants.MOBILE_PLATFORM_VERSION, "15");
         capabilities.setCapability("lt:options", ltOptions);
 
-        driver = new AndroidDriver(new URL("https://udara.manupriya:Ejvwi0FShhVeYpQW2fUwemw88y2DzBbiwFCWdQqYXck9T8WUcM@hub.lambdatest.com/wd/hub"), capabilities);
+        driver = new AndroidDriver(new URL("http://192.168.1.6:4444"), capabilities);
 
     }
 

@@ -26,19 +26,20 @@ public class MobileTest {
         ltOptions.put(Constants.PLATFORM_NAME, "android");
         ltOptions.put(Constants.MOBILE_DEVICE_NAME, "Pixel 6 Pro");
         ltOptions.put(Constants.MOBILE_PLATFORM_VERSION, "13");
+        ltOptions.put("networkname:applicationName","lambda");
         capabilities.setCapability("lt:options", ltOptions);
 
-        driver = new AndroidDriver(new URL("http://192.168.1.9:4444"), capabilities);
+        driver = new AndroidDriver(new URL("http://192.168.1.6:4444"), capabilities);
 
     }
 
     @Test
-    public void TestSourceDemoGooglePixelPro(){
+    public void TestDemoViaLambda(){
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
-        Assert.assertEquals(driver.getTitle(), "Test");
+        Assert.assertEquals(driver.getTitle(), "Swag Labs");
     }
 
     @AfterClass
