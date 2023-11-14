@@ -3,12 +3,12 @@
 <suite name="First" parallel="classes" thread-count="6">
     <test name="sourceDemo1">
         <classes>
-            <class name="com.browserstack.sampleTest.WebTestIntegration1"/>
-            <class name="com.browserstack.sampleTest.WebTestIntegration2"/>
-            <class name="com.browserstack.sampleTest.WebTestIntegration3"/>
-            <class name="com.browserstack.sampleTest.WebTestIntegration4"/>
-            <class name="com.browserstack.sampleTest.WebTestIntegration5"/>
-            <class name="com.browserstack.sampleTest.WebTestIntegration6"/>
+            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest1"/>
+            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest2"/>
+            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest3"/>
+            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest4"/>
+            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest5"/>
+            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest6"/>
         </classes>
     </test>
 </suite>

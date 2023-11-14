@@ -14,21 +14,19 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WebTestIntegration4 {
+public class WebIntegrationFireFoxTest1 {
     RemoteWebDriver driver;
     @BeforeClass
     public void connectToBrowserStack() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("networkname:applicationName","bs");
-        capabilities.setCapability("browserName","chrome");
-        capabilities.setCapability("platformName","Windows 11");
-        capabilities.setCapability("browserVersion","116");
+        capabilities.setCapability(Constants.APPLICATION_NAME,"bs");
+        capabilities.setCapability(Constants.BROWSER_NAME,"firefox");
+        capabilities.setCapability(Constants.PLATFORM_NAME,"Windows 10");
+        capabilities.setCapability(Constants.BROWSER_VERSION,"103");
         Map<String, Object> bsOptions = new HashMap<>();
-        bsOptions.put(Constants.WEB_BUILD_NAME, "Test BS Integration 4");
-
+        bsOptions.put(Constants.BUILD_NAME, "Test BS Integration 1");
         capabilities.setCapability("bstack:options", bsOptions);
         driver = new RemoteWebDriver(new URL("http://192.168.1.6:4444"), capabilities);
-
     }
     @Test
     public void testSourceDemoViaBS(){

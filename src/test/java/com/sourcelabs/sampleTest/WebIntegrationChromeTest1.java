@@ -14,20 +14,20 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WebTestIntegration5 {
+public class WebIntegrationChromeTest1 {
     RemoteWebDriver driver;
     @BeforeClass
     public void connectToSourceLabs() throws MalformedURLException {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("networkname:applicationName","sourceLabs");
-        capabilities.setCapability("browserName","chrome");
-        capabilities.setCapability("platformName","Windows 11");
-        capabilities.setCapability("browserVersion","116");
+        capabilities.setCapability(Constants.APPLICATION_NAME,"sourceLabs");
+        capabilities.setCapability(Constants.BROWSER_NAME,"chrome");
+        capabilities.setCapability(Constants.PLATFORM_NAME,"Windows 11");
+        capabilities.setCapability(Constants.BROWSER_VERSION,"116");
 
         Map<String, Object> sauceOptions = new HashMap<>();
-        sauceOptions.put(Constants.BUILD_NAME, "Test Source Integration 5");
-        sauceOptions.put(Constants.TEST_NAME, "Test Source Integration 5");
+        sauceOptions.put(Constants.BUILD, "Test Source Integration 1");
+        sauceOptions.put(Constants.TEST_NAME, "Test Source Integration 1");
         sauceOptions.put(Constants.SOURCE_LABS_USER_NAME, "oauth-udara.manupriya-054b4");
         sauceOptions.put(Constants.SOURCE_LABS_ACCESS_KEY, "2fba17e7-bfbd-4027-8c21-bef0f924dda0");
         capabilities.setCapability("sauce:options", sauceOptions);

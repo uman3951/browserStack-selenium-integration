@@ -1,4 +1,7 @@
-package com.browserstack.sampleTest;
+/**
+ * This is the latest implementation
+ */
+package com.lambdatest.sampleTest;
 
 import com.common.Constants;
 import io.appium.java_client.AppiumDriver;
@@ -14,26 +17,25 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class MobileTest2 {
+public class MobileTestIntegration1 {
     AppiumDriver driver;
     @BeforeClass
-    public void connectToBrowserStack() throws MalformedURLException {
+    public void connectToLambdaTest() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("networkname:applicationName","bs");
-        capabilities.setCapability("platformName", "android");
-        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
-        browserstackOptions.put("buildName","Test Samsung Galaxy");
-        browserstackOptions.put(Constants.MOBILE_OS_VERSION, "10.0");
-        browserstackOptions.put(Constants.MOBILE_DEVICE_NAME, "Samsung Galaxy S20");
-        browserstackOptions.put("local", "false");
-        capabilities.setCapability("bstack:options", browserstackOptions);
-
+        capabilities.setCapability(Constants.APPLICATION_NAME,"lambda");
+        HashMap<String, Object> ltOptions = new HashMap<String, Object>();
+        ltOptions.put(Constants.BUILD, "Test Mobile Lambda");
+        ltOptions.put(Constants.PROJECT_NAME, "Test Mobile Lambda");
+        ltOptions.put("w3c", true);
+        ltOptions.put(Constants.PLATFORM_NAME, "android");
+        ltOptions.put(Constants.MOBILE_DEVICE_NAME, "Pixel 6 Pro");
+        ltOptions.put(Constants.MOBILE_PLATFORM_VERSION, "13");
+        capabilities.setCapability("lt:options", ltOptions);
         driver = new AndroidDriver(new URL("http://192.168.1.6:4444"), capabilities);
-
     }
 
     @Test
-    public void TestSamsungGalaxyViaBS(){
+    public void TestGooglePixel(){
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");

@@ -1,4 +1,7 @@
-package com.lambdatest.sampleTest;
+/**
+ * This is the latest implementation
+ */
+package com.browserstack.sampleTest;
 
 import com.common.Constants;
 import io.appium.java_client.AppiumDriver;
@@ -14,31 +17,29 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class MobileTestIOS {
+public class MobileTestIntegration1 {
     AppiumDriver driver;
     @BeforeClass
-    public void connectToLambdaTest() throws MalformedURLException {
+    public void connectToBrowserStack() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-        ltOptions.put(Constants.BUILD_NAME, "Test Mobile Lambda3");
-        ltOptions.put(Constants.PROJECT_NAME, "Test Mobile Lambda3");
-        ltOptions.put("w3c", true);
-        ltOptions.put(Constants.PLATFORM_NAME, "ios");
-        ltOptions.put(Constants.MOBILE_DEVICE_NAME, "iPhone 13");
-        ltOptions.put(Constants.MOBILE_PLATFORM_VERSION, "15");
-        capabilities.setCapability("lt:options", ltOptions);
-
+        capabilities.setCapability(Constants.APPLICATION_NAME,"bs");
+        capabilities.setCapability(Constants.PLATFORM_NAME, "android");
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put(Constants.BUILD_NAME,"Test Google Pixel");
+        browserstackOptions.put(Constants.MOBILE_OS_VERSION, "12.0");
+        browserstackOptions.put(Constants.MOBILE_DEVICE_NAME, "Google Pixel 6 Pro");
+        browserstackOptions.put("local", "false");
+        capabilities.setCapability("bstack:options", browserstackOptions);
         driver = new AndroidDriver(new URL("http://192.168.1.6:4444"), capabilities);
-
     }
 
     @Test
-    public void TestSourceDemoGooglePixelPro(){
+    public void TestGooglePixel(){
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
-        Assert.assertEquals(driver.getTitle(), "Test");
+        Assert.assertEquals(driver.getTitle(), "Swag Labs");
     }
 
     @AfterClass

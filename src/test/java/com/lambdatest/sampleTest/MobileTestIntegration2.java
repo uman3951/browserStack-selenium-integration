@@ -1,3 +1,6 @@
+/**
+ * This is the latest implementation
+ */
 package com.lambdatest.sampleTest;
 
 import com.common.Constants;
@@ -14,19 +17,19 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class MobileTest {
+public class MobileTestIntegration2 {
     AppiumDriver driver;
     @BeforeClass
     public void connectToLambdaTest() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(Constants.APPLICATION_NAME,"lambda");
         HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-        ltOptions.put(Constants.BUILD_NAME, "Test Mobile Lambda");
-        ltOptions.put(Constants.PROJECT_NAME, "Test Mobile Lambda");
+        ltOptions.put(Constants.BUILD, "Samsung Galaxy S22");
+        ltOptions.put(Constants.PROJECT_NAME, "Samsung Galaxy S22");
         ltOptions.put("w3c", true);
         ltOptions.put(Constants.PLATFORM_NAME, "android");
-        ltOptions.put(Constants.MOBILE_DEVICE_NAME, "Pixel 6 Pro");
-        ltOptions.put(Constants.MOBILE_PLATFORM_VERSION, "13");
-        ltOptions.put("networkname:applicationName","lambda");
+        ltOptions.put(Constants.MOBILE_DEVICE_NAME, "Galaxy S20");
+        ltOptions.put(Constants.MOBILE_PLATFORM_VERSION, "12");
         capabilities.setCapability("lt:options", ltOptions);
 
         driver = new AndroidDriver(new URL("http://192.168.1.6:4444"), capabilities);
@@ -34,7 +37,7 @@ public class MobileTest {
     }
 
     @Test
-    public void TestDemoViaLambda(){
+    public void TestGalaxyS20(){
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");

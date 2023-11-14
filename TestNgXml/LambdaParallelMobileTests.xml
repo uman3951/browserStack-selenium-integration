@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="First" parallel="classes" thread-count="3">
+    <test name="sourceDemo1">
+        <classes>
+            <class name="com.lambdatest.sampleTest.MobileTestIntegration1"/>
+            <class name="com.lambdatest.sampleTest.MobileTestIntegration2"/>
+            <class name="com.lambdatest.sampleTest.MobileTestIntegration3"/>
+
+        </classes>
+    </test>
+</suite>

@@ -14,17 +14,17 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WebTestIntegration5 {
+public class WebIntegrationChromeTest2 {
     RemoteWebDriver driver;
     @BeforeClass
     public void connectToBrowserStack() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("networkname:applicationName","bs");
-        capabilities.setCapability("browserName","chrome");
-        capabilities.setCapability("platformName","Windows 11");
-        capabilities.setCapability("browserVersion","116");
+        capabilities.setCapability(Constants.APPLICATION_NAME,"bs");
+        capabilities.setCapability(Constants.BROWSER_NAME,"chrome");
+        capabilities.setCapability(Constants.PLATFORM_NAME,"Windows 11");
+        capabilities.setCapability(Constants.BROWSER_VERSION,"116");
         Map<String, Object> bsOptions = new HashMap<>();
-        bsOptions.put(Constants.WEB_BUILD_NAME, "Test BS Integration 5");
+        bsOptions.put(Constants.BUILD_NAME, "Test BS Integration 2");
 
         capabilities.setCapability("bstack:options", bsOptions);
         driver = new RemoteWebDriver(new URL("http://192.168.1.6:4444"), capabilities);

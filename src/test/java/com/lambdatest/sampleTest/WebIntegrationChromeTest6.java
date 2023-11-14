@@ -13,18 +13,18 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class WebTestIntegration5 {
+public class WebIntegrationChromeTest6 {
     RemoteWebDriver driver;
     @BeforeClass
     public void connectToLambdaTest() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("networkname:applicationName","lambda");
-        capabilities.setCapability("browserName","chrome");
-        capabilities.setCapability("platformName","Windows 11");
-        capabilities.setCapability("browserVersion","116");
+        capabilities.setCapability(Constants.APPLICATION_NAME,"lambda");
+        capabilities.setCapability(Constants.BROWSER_NAME,"chrome");
+        capabilities.setCapability(Constants.PLATFORM_NAME,"Windows 11");
+        capabilities.setCapability(Constants.BROWSER_VERSION,"116");
         HashMap<String, Object> ltOptions = new HashMap<String, Object>();
-        ltOptions.put(Constants.BUILD_NAME, "Test Lambda Integration 5");
-        ltOptions.put(Constants.PROJECT_NAME, "Test Lambda Integration 5");
+        ltOptions.put(Constants.BUILD, "Test Lambda Integration 6");
+        ltOptions.put(Constants.PROJECT_NAME, "Test Lambda Integration 6");
 
         capabilities.setCapability("LT:Options", ltOptions);
         driver = new RemoteWebDriver(new URL("http://192.168.1.6:4444"), capabilities);

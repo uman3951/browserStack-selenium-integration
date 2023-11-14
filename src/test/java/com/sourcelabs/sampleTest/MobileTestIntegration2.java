@@ -1,17 +1,13 @@
+/**
+ * This is the latest implementation
+ */
 package com.sourcelabs.sampleTest;
 
 import com.common.Constants;
-import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.MutableCapabilities;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.safari.SafariOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -19,33 +15,35 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Duration;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-public class MobileTest {
+public class MobileTestIntegration2 {
     AppiumDriver driver;
     @BeforeClass
     public void connectToSourceLabs() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(Constants.APPLICATION_NAME,"sourceLabs");
+        capabilities.setCapability(Constants.BROWSER_NAME,"chrome");
+        capabilities.setCapability(Constants.PLATFORM_NAME,"android");
+        capabilities.setCapability(Constants.APPIUM_PLATFORM_VERSION,"12.0");
+        capabilities.setCapability(Constants.APPIUM_DEVICE_NAME,"Google Pixel 6 GoogleAPI Emulator");
         HashMap<String, Object> sauceOptions = new HashMap<String, Object>();
         sauceOptions.put(Constants.SOURCE_LABS_USER_NAME, "oauth-udara.manupriya-054b4");
         sauceOptions.put(Constants.SOURCE_LABS_ACCESS_KEY, "2fba17e7-bfbd-4027-8c21-bef0f924dda0");
-        sauceOptions.put(Constants.BUILD_NAME, "Test Android");
-        sauceOptions.put(Constants.TEST_NAME, "Testing Integration");
-        sauceOptions.put(Constants.MOBILE_OS_VERSION, "12.0");
-        sauceOptions.put(Constants.MOBILE_DEVICE_NAME, "Samsung Galaxy Tab S7 Plus GoogleAPI Emulator");
-        sauceOptions.put("local", "false");
-        capabilities.setCapability("networkname:applicationName","sourceLabs");
+        sauceOptions.put(Constants.BUILD, "Test Google Pixel");
+        sauceOptions.put(Constants.TEST_NAME, "Test Google Pixel");
+         sauceOptions.put("local", "false");
         capabilities.setCapability("sauce:options", sauceOptions);
 
         driver = new AndroidDriver(new URL("http://192.168.1.6:4444"), capabilities);
     }
     @Test
-    public void TestDemoViaSourceLabs(){
-        driver.get("https://www.google.com/");
-        Assert.assertEquals(driver.getTitle(), "Google");
+    public void TestGooglePixelPro(){
+        driver.get("https://www.saucedemo.com");
+        driver.findElement(By.id("user-name")).sendKeys("standard_user");
+        driver.findElement(By.id("password")).sendKeys("secret_sauce");
+        driver.findElement(By.id("login-button")).click();
+        Assert.assertEquals(driver.getTitle(), "Swag Labs");
     }
     @AfterClass
     public void close(){
