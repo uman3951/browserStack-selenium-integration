@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="First" parallel="classes" thread-count="6">
-    <test name="sourceDemo1">
+    <test name="Vendor Integration BrowserStack Web">
         <classes>
-            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest1"/>
-            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest2"/>
-            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest3"/>
-            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest4"/>
-            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest5"/>
-            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest6"/>
+            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest1"/>
+            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest2"/>
+            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest3"/>
+            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest4"/>
+            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest5"/>
+            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest6"/>
         </classes>
     </test>
 </suite>

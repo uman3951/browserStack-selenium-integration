@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="First" parallel="classes" thread-count="6">
-    <test name="sourceDemo1">
+    <test name="Vendor Integration Lambda Web">
         <classes>
-            <class name="com.lambdatest.sampleTest.WebIntegrationChromeTest1"/>
-            <class name="com.lambdatest.sampleTest.WebIntegrationChromeTest2"/>
-            <class name="com.lambdatest.sampleTest.WebIntegrationChromeTest3"/>
-            <class name="com.lambdatest.sampleTest.WebIntegrationChromeTest4"/>
-            <class name="com.lambdatest.sampleTest.WebIntegrationChromeTest5"/>
-            <class name="com.lambdatest.sampleTest.WebIntegrationChromeTest6"/>
+            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest1"/>
+            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest2"/>
+            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest3"/>
+            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest4"/>
+            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest5"/>
+            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest6"/>
         </classes>
     </test>
 </suite>

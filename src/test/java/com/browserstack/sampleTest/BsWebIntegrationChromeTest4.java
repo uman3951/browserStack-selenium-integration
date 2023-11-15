@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class WebIntegrationChromeTest5 {
+public class BsWebIntegrationChromeTest4 {
     RemoteWebDriver driver;
     @BeforeClass
     public void connectToBrowserStack() throws MalformedURLException {
@@ -24,14 +24,16 @@ public class WebIntegrationChromeTest5 {
         capabilities.setCapability(Constants.PLATFORM_NAME,"Windows 11");
         capabilities.setCapability(Constants.BROWSER_VERSION,"116");
         Map<String, Object> bsOptions = new HashMap<>();
-        bsOptions.put(Constants.BUILD_NAME, "Test BS Integration 5");
+        bsOptions.put(Constants.PROJECT_NAME, "Test BS");
+        bsOptions.put(Constants.BUILD_NAME, "Test BS Integration 4");
 
         capabilities.setCapability("bstack:options", bsOptions);
         driver = new RemoteWebDriver(new URL("http://192.168.1.6:4444"), capabilities);
 
     }
     @Test
-    public void testSourceDemoViaBS(){
+    public void testDemoViaBS(){
+        driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");

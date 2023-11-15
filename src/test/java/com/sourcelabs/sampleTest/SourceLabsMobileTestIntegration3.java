@@ -13,7 +13,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class MobileTestIntegration3 {
+public class SourceLabsMobileTestIntegration3 {
    // IOSDriver driver;
    AppiumDriver driver;
     @BeforeClass
@@ -34,7 +34,7 @@ public class MobileTestIntegration3 {
         driver = new IOSDriver(new URL("http://192.168.1.6:4444"), capabilities);
     }
     @Test
-    public void TestiPhone7(){
+    public void testiPhone7(){
         driver.get("https://www.google.com/");
         Assert.assertEquals(driver.getTitle(), "Google");
     }

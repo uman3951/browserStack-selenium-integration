@@ -2,6 +2,7 @@ package com.common;
 
 public class Constants {
     public static String BUILD_NAME = "buildName";
+    public static String PROJECT_NAME = "projectName";
     public static String MOBILE_OS_VERSION = "osVersion";
     public static String MOBILE_DEVICE_NAME = "deviceName";
     public static String BUILD = "build";
@@ -16,7 +17,7 @@ public class Constants {
     //LamndaTest Configurations
     public static String MOBILE_PLATFORM_VERSION = "platformVersion";
     public static String PLATFORM_NAME = "platformName";
-    public static String PROJECT_NAME = "project";
+    public static String PROJECT = "project";
     public static String BROWSER_NAME = "browserName";
     public static String BROWSER_VERSION = "browserVersion";
 

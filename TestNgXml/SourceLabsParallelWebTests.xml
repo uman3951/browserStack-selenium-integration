@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="First" parallel="classes" thread-count="6">
-    <test name="sourceDemo1">
+    <test name="Vendor Integration SourceLabs Web">
         <classes>
-            <class name="com.sourcelabs.sampleTest.WebIntegrationChromeTest1"/>
-            <class name="com.sourcelabs.sampleTest.WebIntegrationChromeTest2"/>
-            <class name="com.sourcelabs.sampleTest.WebIntegrationChromeTest3"/>
-            <class name="com.sourcelabs.sampleTest.WebIntegrationChromeTest4"/>
-            <class name="com.sourcelabs.sampleTest.WebIntegrationChromeTest5"/>
-            <class name="com.sourcelabs.sampleTest.WebIntegrationChromeTest6"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest1"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest2"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest3"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest4"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest5"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest6"/>
         </classes>
     </test>
 </suite>

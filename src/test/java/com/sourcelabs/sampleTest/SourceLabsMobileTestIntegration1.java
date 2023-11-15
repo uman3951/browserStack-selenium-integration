@@ -14,7 +14,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class MobileTestIntegration1 {
+public class SourceLabsMobileTestIntegration1 {
     AppiumDriver driver;
     @BeforeClass
     public void connectToSourceLabs() throws MalformedURLException {
@@ -34,7 +34,7 @@ public class MobileTestIntegration1 {
         driver = new AndroidDriver(new URL("http://192.168.1.6:4444"), capabilities);
     }
     @Test
-    public void TestGalaxyS7(){
+    public void testGalaxyS7(){
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");

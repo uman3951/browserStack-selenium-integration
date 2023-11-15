@@ -1,37 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="First" parallel="classes" thread-count="29">
-    <test name="sourceDemo1">
+<suite name="First" parallel="classes" thread-count="18">
+    <test name="All Vendor Integration Web">
         <classes>
-            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest1"/>
-            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest2"/>
-            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest3"/>
-            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest4"/>
-            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest5"/>
-            <class name="com.browserstack.sampleTest.WebIntegrationChromeTest6"/>
-            <class name="com.browserstack.sampleTest.MobileTestIntegration1"/>
-            <class name="com.browserstack.sampleTest.MobileTestIntegration2"/>
-            <class name="com.browserstack.sampleTest.MobileTestIntegration3"/>
-            <class name="com.browserstack.sampleTest.MobileTestIntegration4"/>
-            <class name="com.sourcelabs.sampleTest.WebIntegrationChromeTest1"/>
-            <class name="com.sourcelabs.sampleTest.WebIntegrationChromeTest2"/>
-            <class name="com.sourcelabs.sampleTest.WebIntegrationChromeTest3"/>
-            <class name="com.sourcelabs.sampleTest.WebIntegrationChromeTest4"/>
-            <class name="com.sourcelabs.sampleTest.WebIntegrationChromeTest5"/>
-            <class name="com.sourcelabs.sampleTest.WebIntegrationChromeTest6"/>
-            <class name="com.sourcelabs.sampleTest.MobileTestIntegration1"/>
-            <class name="com.sourcelabs.sampleTest.MobileTestIntegration2"/>
-            <class name="com.sourcelabs.sampleTest.MobileTestIntegration3"/>
-            <class name="com.lambdatest.sampleTest.WebIntegrationChromeTest1"/>
-            <class name="com.lambdatest.sampleTest.WebIntegrationChromeTest2"/>
-            <class name="com.lambdatest.sampleTest.WebIntegrationChromeTest3"/>
-            <class name="com.lambdatest.sampleTest.WebIntegrationChromeTest4"/>
-            <class name="com.lambdatest.sampleTest.WebIntegrationChromeTest5"/>
-            <class name="com.lambdatest.sampleTest.WebIntegrationChromeTest6"/>
-            <class name="com.lambdatest.sampleTest.MobileTestIntegration1"/>
-            <class name="com.lambdatest.sampleTest.MobileTestIntegration2"/>
-            <class name="com.lambdatest.sampleTest.MobileTestIntegration3"/>
-            <class name="com.lambdatest.sampleTest.MobileTestIntegration4"/>
+            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest1"/>
+            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest2"/>
+            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest3"/>
+            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest4"/>
+            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest5"/>
+            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest6"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest1"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest2"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest3"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest4"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest5"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest6"/>
+            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest1"/>
+            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest2"/>
+            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest3"/>
+            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest4"/>
+            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest5"/>
+            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest6"/>
         </classes>
     </test>
 </suite>

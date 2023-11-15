@@ -17,7 +17,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class MobileTestIntegration3 {
+public class LambdaMobileTestIntegration3 {
     AppiumDriver driver;
     @BeforeClass
     public void connectToLambdaTest() throws MalformedURLException {
@@ -25,7 +25,7 @@ public class MobileTestIntegration3 {
         capabilities.setCapability(Constants.APPLICATION_NAME,"lambda");
         HashMap<String, Object> ltOptions = new HashMap<String, Object>();
         ltOptions.put(Constants.BUILD, "Galaxy Note 20 Ultra");
-        ltOptions.put(Constants.PROJECT_NAME, "Galaxy Note 20 Ultra");
+        ltOptions.put(Constants.PROJECT, "Galaxy Note 20 Ultra");
         ltOptions.put("w3c", true);
         ltOptions.put(Constants.PLATFORM_NAME, "android");
         ltOptions.put(Constants.MOBILE_DEVICE_NAME, "Galaxy Note 20 Ultra");
@@ -37,7 +37,7 @@ public class MobileTestIntegration3 {
     }
 
     @Test
-    public void TestGalaxyNote(){
+    public void testGalaxyNote(){
         driver.get("https://www.saucedemo.com");
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");

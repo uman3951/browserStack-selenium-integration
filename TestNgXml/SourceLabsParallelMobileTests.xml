@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="First" parallel="classes" thread-count="3">
-    <test name="sourceDemo1">
+    <test name="Vendor Integration SourceLabs Mobile">
         <classes>
-            <class name="com.sourcelabs.sampleTest.MobileTestIntegration1"/>
-            <class name="com.sourcelabs.sampleTest.MobileTestIntegration2"/>
-            <class name="com.sourcelabs.sampleTest.MobileTestIntegration3"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsMobileTestIntegration1"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsMobileTestIntegration2"/>
+            <class name="com.sourcelabs.sampleTest.SourceLabsMobileTestIntegration3"/>
         </classes>
     </test>
 </suite>
