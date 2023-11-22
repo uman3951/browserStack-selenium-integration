@@ -9,8 +9,8 @@ public class Constants {
     public static String TEST_NAME = "name";
 
     // Source Labs Configurations
-    public static String SOURCE_LABS_USER_NAME = "username";
-    public static String SOURCE_LABS_ACCESS_KEY = "accessKey";
+    public static String USER_NAME = "username";
+    public static String ACCESS_KEY = "accessKey";
     public static String APPIUM_DEVICE_NAME = "appium:deviceName";
     public static String APPIUM_PLATFORM_VERSION = "appium:platformVersion";
 

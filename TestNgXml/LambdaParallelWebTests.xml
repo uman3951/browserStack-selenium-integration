@@ -3,12 +3,12 @@
 <suite name="First" parallel="classes" thread-count="6">
     <test name="Vendor Integration Lambda Web">
         <classes>
-            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest1"/>
-            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest2"/>
-            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest3"/>
-            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest4"/>
-            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest5"/>
-            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest6"/>
+            <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest1"/>
+            <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest2"/>
+            <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest3"/>
+            <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest4"/>
+            <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest5"/>
+            <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest6"/>
         </classes>
     </test>
 </suite>

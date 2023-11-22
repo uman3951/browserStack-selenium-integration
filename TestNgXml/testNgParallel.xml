@@ -3,36 +3,36 @@
 <suite name="First" parallel="classes" thread-count="30">
     <test name="All Vendor Integration">
         <classes>
-            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest1"/>
-            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest2"/>
-            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest3"/>
-            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest4"/>
-            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest5"/>
-            <class name="com.browserstack.sampleTest.BsWebIntegrationChromeTest6"/>
-            <class name="com.browserstack.sampleTest.BsWebIntegrationFireFoxTest1"/>
-            <class name="com.browserstack.sampleTest.BsMobileTestIntegration1"/>
-            <class name="com.browserstack.sampleTest.BsMobileTestIntegration2"/>
-            <class name="com.browserstack.sampleTest.BsMobileTestIntegration3"/>
-            <class name="com.browserstack.sampleTest.BsMobileTestIntegration4"/>
-            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest1"/>
-            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest2"/>
-            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest3"/>
-            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest4"/>
-            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest5"/>
-            <class name="com.sourcelabs.sampleTest.SourceLabsWebIntegrationChromeTest6"/>
-            <class name="com.sourcelabs.sampleTest.SourceLabsMobileTestIntegration1"/>
-            <class name="com.sourcelabs.sampleTest.SourceLabsMobileTestIntegration2"/>
-            <class name="com.sourcelabs.sampleTest.SourceLabsMobileTestIntegration3"/>
-            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest1"/>
-            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest2"/>
-            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest3"/>
-            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest4"/>
-            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest5"/>
-            <class name="com.lambdatest.sampleTest.LambdaWebIntegrationChromeTest6"/>
-            <class name="com.lambdatest.sampleTest.LambdaMobileTestIntegration1"/>
-            <class name="com.lambdatest.sampleTest.LambdaMobileTestIntegration2"/>
-            <class name="com.lambdatest.sampleTest.LambdaMobileTestIntegration3"/>
-            <class name="com.lambdatest.sampleTest.LambdaMobileTestIntegration4"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest1"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest2"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest3"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest4"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest5"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest6"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationFireFoxTest1"/>
+            <class name="com.vendor.browserstack.mobile.BsMobileTestIntegration1"/>
+            <class name="com.vendor.browserstack.mobile.BsMobileTestIntegration2"/>
+            <class name="com.vendor.browserstack.mobile.BsMobileTestIntegration3"/>
+            <class name="com.vendor.browserstack.mobile.BsMobileTestIntegration4"/>
+            <class name="com.vendor.sourcelabs.web.SourceLabsWebIntegrationChromeTest1"/>
+            <class name="com.vendor.sourcelabs.web.SourceLabsWebIntegrationChromeTest2"/>
+            <class name="com.vendor.sourcelabs.web.SourceLabsWebIntegrationChromeTest3"/>
+            <class name="com.vendor.sourcelabs.web.SourceLabsWebIntegrationChromeTest4"/>
+            <class name="com.vendor.sourcelabs.web.SourceLabsWebIntegrationChromeTest5"/>
+            <class name="com.vendor.sourcelabs.web.SourceLabsWebIntegrationChromeTest6"/>
+            <class name="com.vendor.sourcelabs.mobile.SourceLabsMobileTestIntegration1"/>
+            <class name="com.vendor.sourcelabs.mobile.SourceLabsMobileTestIntegration2"/>
+            <class name="com.vendor.sourcelabs.mobile.SourceLabsMobileTestIntegration3"/>
+            <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest1"/>
+            <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest2"/>
+            <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest3"/>
+            <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest4"/>
+            <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest5"/>
+            <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest6"/>
+            <class name="com.vendor.lambdatest.mobile.LambdaMobileTestIntegration1"/>
+            <class name="com.vendor.lambdatest.mobile.LambdaMobileTestIntegration2"/>
+            <class name="com.vendor.lambdatest.mobile.LambdaMobileTestIntegration3"/>
+            <class name="com.vendor.lambdatest.mobile.LambdaMobileTestIntegration4"/>
         </classes>
     </test>
 </suite>
