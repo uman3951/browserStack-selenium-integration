@@ -32,7 +32,7 @@ public class LambdaMobileTestIntegration3 {
         ltOptions.put(Constants.MOBILE_PLATFORM_VERSION, "12");
         capabilities.setCapability("lt:options", ltOptions);
 
-        driver = new AndroidDriver(new URL("http://192.168.1.6:4444"), capabilities);
+        driver = new AndroidDriver(new URL(Constants.HUB_URL), capabilities);
 
     }
 

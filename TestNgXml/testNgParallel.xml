@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="First" parallel="classes" thread-count="30">
+<suite name="First" parallel="classes" thread-count="33">
     <test name="All Vendor Integration">
         <classes>
             <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest1"/>
@@ -14,6 +14,7 @@
             <class name="com.vendor.browserstack.mobile.BsMobileTestIntegration2"/>
             <class name="com.vendor.browserstack.mobile.BsMobileTestIntegration3"/>
             <class name="com.vendor.browserstack.mobile.BsMobileTestIntegration4"/>
+            <class name="com.vendor.browserstack.mobile.BsMobileAppTest"/>
             <class name="com.vendor.sourcelabs.web.SourceLabsWebIntegrationChromeTest1"/>
             <class name="com.vendor.sourcelabs.web.SourceLabsWebIntegrationChromeTest2"/>
             <class name="com.vendor.sourcelabs.web.SourceLabsWebIntegrationChromeTest3"/>
@@ -23,6 +24,8 @@
             <class name="com.vendor.sourcelabs.mobile.SourceLabsMobileTestIntegration1"/>
             <class name="com.vendor.sourcelabs.mobile.SourceLabsMobileTestIntegration2"/>
             <class name="com.vendor.sourcelabs.mobile.SourceLabsMobileTestIntegration3"/>
+            <class name="com.vendor.sourcelabs.mobile.SourceLabsMobileAppTest"/>
+            <class name="com.vendor.sourcelabs.mobile.SourceLabsiOSAppTest"/>
             <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest1"/>
             <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest2"/>
             <class name="com.vendor.lambdatest.web.LambdaWebIntegrationChromeTest3"/>

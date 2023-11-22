@@ -28,7 +28,7 @@ public class LambdaWebIntegrationChromeTest1 {
 //        ltOptions.put(Constants.USER_NAME, "udara.manupriya");
 //        ltOptions.put(Constants.ACCESS_KEY, "Ejvwi0FShhVeYpQW2fUwemw88y2DzBbiwFCWdQqYXck9T8WUcM");
         capabilities.setCapability("LT:Options", ltOptions);
-        driver = new RemoteWebDriver(new URL("http://192.168.1.10:4444"), capabilities);
+        driver = new RemoteWebDriver(new URL(Constants.HUB_URL), capabilities);
     }
     @Test
     public void testDemoViaLambda(){

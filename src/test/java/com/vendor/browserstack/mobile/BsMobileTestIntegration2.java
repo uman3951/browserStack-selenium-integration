@@ -29,7 +29,7 @@ public class BsMobileTestIntegration2 {
         // browserstackOptions.put("networkname:applicationName","bs");
         capabilities.setCapability("bstack:options", browserstackOptions);
 
-        driver = new AndroidDriver(new URL("http://192.168.1.6:4444"), capabilities);
+        driver = new AndroidDriver(new URL(Constants.HUB_URL), capabilities);
 
     }
 

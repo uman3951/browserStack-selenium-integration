@@ -26,7 +26,7 @@ public class LambdaWebIntegrationChromeTest3 {
         ltOptions.put(Constants.BUILD, "Test Lambda Integration 3");
         ltOptions.put(Constants.PROJECT, "Test Lambda Integration 3");
         capabilities.setCapability("LT:Options", ltOptions);
-        driver = new RemoteWebDriver(new URL("http://192.168.1.6:4444"), capabilities);
+        driver = new RemoteWebDriver(new URL(Constants.HUB_URL), capabilities);
     }
     @Test
     public void testDemoViaLambda(){

@@ -31,7 +31,7 @@ public class SourceLabsiOSAppTest {
         sauceOptions.put(Constants.TEST_NAME, "Test ios App");
         sauceOptions.put("local", "false");
         capabilities.setCapability("sauce:options", sauceOptions);
-        driver = new IOSDriver(new URL("http://192.168.1.10:4444"), capabilities);
+        driver = new IOSDriver(new URL(Constants.HUB_URL), capabilities);
     }
     @Test
     public void testiPhone7(){

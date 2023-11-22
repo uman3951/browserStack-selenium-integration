@@ -28,7 +28,7 @@ public class BsWebIntegrationChromeTest2 {
         bsOptions.put(Constants.BUILD_NAME, "Test BS Integration 2 ");
 
         capabilities.setCapability("bstack:options", bsOptions);
-        driver = new RemoteWebDriver(new URL("http://192.168.1.10:4444"), capabilities);
+        driver = new RemoteWebDriver(new URL(Constants.HUB_URL), capabilities);
 
     }
     @Test

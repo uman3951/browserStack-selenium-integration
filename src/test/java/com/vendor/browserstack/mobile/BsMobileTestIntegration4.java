@@ -28,7 +28,7 @@ public class BsMobileTestIntegration4 {
         browserstackOptions.put("local", "false");
         capabilities.setCapability("bstack:options", browserstackOptions);
 
-        driver = new IOSDriver(new URL("http://192.168.1.6:4444"), capabilities);
+        driver = new IOSDriver(new URL(Constants.HUB_URL), capabilities);
 
     }
 

@@ -25,6 +25,9 @@ public class Constants {
 
     public static String APPLICATION_NAME = "networkname:applicationName";
 
+    // Selenium Grid Hub
+    public static String HUB_URL = "http://192.168.1.10:4444";
+
 
 
 

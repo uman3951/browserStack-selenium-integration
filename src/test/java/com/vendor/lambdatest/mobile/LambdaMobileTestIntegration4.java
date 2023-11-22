@@ -29,7 +29,7 @@ public class LambdaMobileTestIntegration4 {
         ltOptions.put(Constants.MOBILE_PLATFORM_VERSION, "10.3");
         capabilities.setCapability("lt:options", ltOptions);
 
-        driver = new IOSDriver(new URL("http://192.168.1.6:4444"), capabilities);
+        driver = new IOSDriver(new URL(Constants.HUB_URL), capabilities);
 
     }
 

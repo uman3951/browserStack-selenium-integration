@@ -31,7 +31,7 @@ public class BsMobileAppTest {
         browserstackOptions.put(Constants.MOBILE_DEVICE_NAME, "Google Pixel 6 Pro");
         browserstackOptions.put("local", "false");
         capabilities.setCapability("bstack:options", browserstackOptions);
-        driver = new AndroidDriver(new URL("http://192.168.1.6:4444"), capabilities);
+        driver = new AndroidDriver(new URL(Constants.HUB_URL), capabilities);
     }
 
     @Test

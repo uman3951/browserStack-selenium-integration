@@ -31,7 +31,7 @@ public class SourceLabsWebIntegrationChromeTest1 {
 //        sauceOptions.put(Constants.USER_NAME, "oauth-udara.manupriya-054b4");
 //        sauceOptions.put(Constants.ACCESS_KEY, "2fba17e7-bfbd-4027-8c21-bef0f924dda0");
         capabilities.setCapability("sauce:options", sauceOptions);
-        driver = new RemoteWebDriver(new URL("http://192.168.1.10:4444"), capabilities);
+        driver = new RemoteWebDriver(new URL(Constants.HUB_URL), capabilities);
     }
     @Test
     public void testDemoViaSourceLabs(){
