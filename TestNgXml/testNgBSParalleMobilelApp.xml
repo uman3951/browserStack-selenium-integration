@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="First" parallel="classes" thread-count="33">
+    <test name="All Vendor Integration">
+        <classes>
+            <class name="com.vendor.browserstack.mobile.BsMobileAppTest"/>
+            <class name="com.vendor.browserstack.mobile.BsMobileAppTest1"/>
+            <class name="com.vendor.browserstack.mobile.BsMobileAppTest2"/>
+            <class name="com.vendor.browserstack.mobile.BsMobileAppTest3"/>
+        </classes>
+    </test>
+</suite>

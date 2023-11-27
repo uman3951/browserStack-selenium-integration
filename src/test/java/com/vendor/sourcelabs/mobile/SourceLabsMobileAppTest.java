@@ -23,7 +23,7 @@ public class SourceLabsMobileAppTest {
         capabilities.setCapability(Constants.PLATFORM_NAME,"android");
         capabilities.setCapability(Constants.APPIUM_PLATFORM_VERSION,"12.0");
         capabilities.setCapability(Constants.APPIUM_DEVICE_NAME,"Samsung Galaxy Tab S7 Plus GoogleAPI Emulator");
-        capabilities.setCapability("app", "storage:28a2e6f6-713a-492c-a01f-a9088ebaf7f7");
+        capabilities.setCapability("app", "storage:a50cf9eb-f1f3-430a-a94b-a90aa3cf2981");
         //set capabilities.setCapability("browserName", "") for virtual devices
          capabilities.setCapability("browserName", "");
         HashMap<String, Object> sauceOptions = new HashMap<String, Object>();

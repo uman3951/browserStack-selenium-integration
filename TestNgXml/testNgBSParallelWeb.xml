@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="First" parallel="classes" thread-count="33">
+    <test name="All Vendor Integration">
+        <classes>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest1"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest2"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest3"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest4"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest5"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest6"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest7"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest8"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest9"/>
+            <class name="com.vendor.browserstack.web.BsWebIntegrationChromeTest10"/>
+            <!--class name="com.vendor.browserstack.web.BsWebIntegrationFireFoxTest1"/>
+            <class name="com.vendor.browserstack.mobile.BsMobileTestIntegration1"/>
+            <class name="com.vendor.browserstack.mobile.BsMobileTestIntegration2"/>
+            <class name="com.vendor.browserstack.mobile.BsMobileTestIntegration3"/>
+            <class name="com.vendor.browserstack.mobile.BsMobileTestIntegration4"/>
+            <class name="com.vendor.browserstack.mobile.BsMobileAppTest"/-->
+        </classes>
+    </test>
+</suite>

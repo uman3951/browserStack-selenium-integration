@@ -4,7 +4,6 @@ import com.common.Constants;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -13,7 +12,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-public class SourceLabsiOSAppTest {
+public class SourceLabsiOSAppTest2 {
    // IOSDriver driver;
    AppiumDriver driver;
     @BeforeClass
@@ -25,10 +24,10 @@ public class SourceLabsiOSAppTest {
         capabilities.setCapability(Constants.APPIUM_DEVICE_NAME, "iPhone XR");
         capabilities.setCapability("app", "storage:5da55bc4-a86e-48f6-ac83-bd67066e1cae");
         HashMap<String, Object> sauceOptions = new HashMap<String, Object>();
-        sauceOptions.put(Constants.USER_NAME, "tipuman3951");
-        sauceOptions.put(Constants.USER_NAME, "91b57790-aa4c-4f76-b39a-c06d2aa60586");
-        sauceOptions.put(Constants.BUILD, "Test ios App");
-        sauceOptions.put(Constants.TEST_NAME, "Test ios App");
+//        sauceOptions.put(Constants.USER_NAME, "oauth-udara.manupriya-054b4");
+//        sauceOptions.put(Constants.USER_NAME, "2fba17e7-bfbd-4027-8c21-bef0f924dda0");
+        sauceOptions.put(Constants.BUILD, "Test ios App 2");
+        sauceOptions.put(Constants.TEST_NAME, "Test ios App 2");
         sauceOptions.put("local", "false");
         capabilities.setCapability("sauce:options", sauceOptions);
         driver = new IOSDriver(new URL(Constants.HUB_URL), capabilities);

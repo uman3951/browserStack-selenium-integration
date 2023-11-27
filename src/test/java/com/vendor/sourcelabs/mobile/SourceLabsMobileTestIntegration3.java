@@ -22,7 +22,9 @@ public class SourceLabsMobileTestIntegration3 {
         capabilities.setCapability(Constants.APPLICATION_NAME,"sourceLabs");
         capabilities.setCapability(Constants.BROWSER_NAME,"safari");
         capabilities.setCapability(Constants.PLATFORM_NAME,"iOS");
-        capabilities.setCapability(Constants.APPIUM_PLATFORM_VERSION, "16.3");
+//        capabilities.setCapability(Constants.APPIUM_PLATFORM_VERSION, "16.3");
+//        capabilities.setCapability(Constants.APPIUM_DEVICE_NAME, "iPhone XR");
+        capabilities.setCapability(Constants.APPIUM_PLATFORM_VERSION, "16.7");
         capabilities.setCapability(Constants.APPIUM_DEVICE_NAME, "iPhone XR");
         HashMap<String, Object> sauceOptions = new HashMap<String, Object>();
         sauceOptions.put(Constants.BUILD, "Test iPhone");
