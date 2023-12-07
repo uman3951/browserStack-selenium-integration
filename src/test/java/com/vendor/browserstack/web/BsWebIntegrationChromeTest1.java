@@ -26,7 +26,7 @@ public class BsWebIntegrationChromeTest1 {
         capabilities.setCapability(Constants.BROWSER_VERSION,"116");
 
         Map<String, Object> bsOptions = new HashMap<>();
-        bsOptions.put(Constants.BUILD_NAME, "Test BS Integration Test");
+        bsOptions.put(Constants.BUILD_NAME, "Test BS Integration 1");
         bsOptions.put(Constants.PROJECT_NAME, "Test BS");
         capabilities.setCapability("bstack:options", bsOptions);
         driver = new RemoteWebDriver(new URL(Constants.HUB_URL), capabilities);
