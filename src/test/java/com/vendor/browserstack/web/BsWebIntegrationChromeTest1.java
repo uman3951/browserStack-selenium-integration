@@ -2,6 +2,7 @@ package com.vendor.browserstack.web;
 
 import com.common.Constants;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
@@ -21,11 +22,11 @@ public class BsWebIntegrationChromeTest1 {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(Constants.APPLICATION_NAME,"bs");
         capabilities.setCapability(Constants.BROWSER_NAME,"chrome");
-        capabilities.setCapability(Constants.PLATFORM_NAME,"Windows 11");
+        capabilities.setCapability(Constants.PLATFORM_NAME, "windows 11");
         capabilities.setCapability(Constants.BROWSER_VERSION,"116");
 
         Map<String, Object> bsOptions = new HashMap<>();
-        bsOptions.put(Constants.BUILD_NAME, "Test BS Integration 1");
+        bsOptions.put(Constants.BUILD_NAME, "Test BS Integration Test");
         bsOptions.put(Constants.PROJECT_NAME, "Test BS");
         capabilities.setCapability("bstack:options", bsOptions);
         driver = new RemoteWebDriver(new URL(Constants.HUB_URL), capabilities);
