@@ -56,6 +56,11 @@
         <artifactId>json-simple</artifactId>
         <version>1.1.1</version>
     </dependency>
+        <dependency>
+            <groupId>com.sysco.qe</groupId>
+            <artifactId>sutap_core</artifactId>
+            <version>3.2.0_Sandbox</version>
+        </dependency>
     </dependencies>
 
     <build>
