@@ -26,15 +26,16 @@ public class BsWebIntegrationChromeTest1 {
         capabilities.setCapability(Constants.BROWSER_VERSION,"116");
 
         Map<String, Object> bsOptions = new HashMap<>();
-        bsOptions.put(Constants.BUILD_NAME, "Test BS Integration 1");
+        bsOptions.put(Constants.BUILD_NAME, "Test BS Integration 6");
         bsOptions.put(Constants.PROJECT_NAME, "Test BS");
         capabilities.setCapability("bstack:options", bsOptions);
         driver = new RemoteWebDriver(new URL(Constants.HUB_URL), capabilities);
     }
     @Test
-    public void testDemoViaBS(){
+    public void testDemoViaBS() throws InterruptedException {
         driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com");
+
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
         driver.findElement(By.id("login-button")).click();
