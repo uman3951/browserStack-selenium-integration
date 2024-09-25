@@ -37,11 +37,11 @@ public class formHealTestLocal {
     @Test
     public void testAutoHealEnabled() throws InterruptedException {
 
-        syscoLabUI = new SyscoLabWUI(desiredCapabilities, true);
+        syscoLabUI = new SyscoLabWUI(desiredCapabilities, false);
         //No Changes in the UI - Initial Mandatory Run
         syscoLabUI.navigateTo("https://perfplatform.cloud.sysco.net/files/jenkins/PerfPlatformTest-Develop/55/distributed-jmeter-slave-qperfdevelop-55-server-79bf4574c7kfc4n/checkout/");
         //Changes in the UI - Healing Run
-        syscoLabUI.navigateTo("https://perfplatform.cloud.sysco.net/files/jenkins/PerfPlatformTest-Develop/74/distributed-jmeter-slave-qperfdevelop-74-server-78b694b464cgxf9/checkout/");
+        //syscoLabUI.navigateTo("https://perfplatform.cloud.sysco.net/files/jenkins/PerfPlatformTest-Develop/74/distributed-jmeter-slave-qperfdevelop-74-server-78b694b464cgxf9/checkout/");
         Thread.sleep(10000);
         syscoLabUI.findElement(By.id("firstName")).sendKeys("Udara");
         syscoLabUI.findElement(By.id("lastName")).sendKeys("Manupriya");

@@ -3,7 +3,7 @@ package com.gridnodes;
 import com.syscolab.qe.core.ui.SyscoLabUI;
 import com.syscolab.qe.core.ui.web.SyscoLabWUI;
 
-import com.syscolab.qe.core.util.browserstack.appdata;
+import com.syscolab.qe.core.util.browserstack.MobileAppUpload;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -146,7 +146,7 @@ public class ExecuteQLabV2Tests {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("device:platform", "android");
         //Need to provide the location of the .apk file
-        capabilities.setCapability("appium:app", appdata.uploadAppToBrowserStack(apkFilePath));
+        capabilities.setCapability("appium:app", MobileAppUpload.uploadAppToBrowserStack(apkFilePath));
         capabilities.setCapability("appium:deviceName", "Google Pixel 6 Pro");
         HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
         browserstackOptions.put("buildName","Test Mobile 20_8");

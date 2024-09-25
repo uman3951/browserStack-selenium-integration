@@ -41,7 +41,7 @@
         <dependency>
             <groupId>com.sysco.qe</groupId>
             <artifactId>sutap_core</artifactId>
-            <version>3.3.0</version>
+            <version>3.3.0_QA_Env</version>
         </dependency>
 <!--        <dependency>-->
 <!--            <groupId>software.amazon.awssdk</groupId>-->
